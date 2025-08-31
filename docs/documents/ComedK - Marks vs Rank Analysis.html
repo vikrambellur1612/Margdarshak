@@ -1,0 +1,460 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ComedK Marks vs Rank Analysis - Margdarshak FAQ</title>
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 20px;
+            background: #f8f9fa;
+        }
+        .document-header {
+            background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+            color: white;
+            padding: 30px;
+            border-radius: 15px;
+            margin-bottom: 30px;
+            text-align: center;
+        }
+        .document-header h1 {
+            margin: 0;
+            font-size: 2rem;
+        }
+        .document-content {
+            background: white;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+        }
+        .insight-box {
+            background: #f8f9ff;
+            border-left: 4px solid #4facfe;
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 5px;
+        }
+        .insight-box h3 {
+            color: #4facfe;
+            margin-top: 0;
+        }
+        .comparison-box {
+            background: #fff3cd;
+            border-left: 4px solid #ffc107;
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 5px;
+        }
+        .comparison-box h3 {
+            color: #856404;
+            margin-top: 0;
+        }
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            margin: 20px 0;
+        }
+        .stat-card {
+            background: #f8f9ff;
+            padding: 20px;
+            border-radius: 10px;
+            border-left: 4px solid #4facfe;
+            text-align: center;
+        }
+        .stat-value {
+            font-size: 2rem;
+            font-weight: bold;
+            color: #4facfe;
+            margin-bottom: 5px;
+        }
+        .stat-label {
+            color: #666;
+            font-size: 0.9rem;
+        }
+        .data-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+            font-size: 0.85rem;
+        }
+        .data-table th, .data-table td {
+            border: 1px solid #ddd;
+            padding: 6px;
+            text-align: center;
+        }
+        .data-table th {
+            background-color: #4facfe;
+            color: white;
+            font-weight: bold;
+            font-size: 0.8rem;
+        }
+        .data-table tr:nth-child(even) {
+            background-color: #f9f9f9;
+        }
+        .data-table tr:hover {
+            background-color: #f5f5f5;
+        }
+        .marks-range {
+            background: #e8f5e8;
+            border-left: 4px solid #28a745;
+            padding: 15px;
+            margin: 10px 0;
+            border-radius: 5px;
+        }
+        .marks-range h4 {
+            color: #28a745;
+            margin-top: 0;
+            margin-bottom: 10px;
+        }
+        .session-analysis {
+            background: #d1ecf1;
+            border-left: 4px solid #17a2b8;
+            padding: 15px;
+            margin: 15px 0;
+            border-radius: 5px;
+        }
+        .session-analysis h4 {
+            color: #0c5460;
+            margin-top: 0;
+            margin-bottom: 10px;
+        }
+        .warning {
+            background: #f8d7da;
+            border-left: 4px solid #dc3545;
+            padding: 15px;
+            margin: 20px 0;
+            border-radius: 5px;
+            color: #721c24;
+        }
+        .top-performers {
+            background: #fff3e0;
+            border-left: 4px solid #ff9800;
+            padding: 15px;
+            margin: 15px 0;
+            border-radius: 5px;
+        }
+        .top-performers h4 {
+            color: #e65100;
+            margin-top: 0;
+            margin-bottom: 10px;
+        }
+        .highlight-row {
+            background-color: #fffacd !important;
+            font-weight: bold;
+        }
+        @media (max-width: 768px) {
+            body {
+                padding: 10px;
+            }
+            .document-header h1 {
+                font-size: 1.5rem;
+            }
+            .document-content {
+                padding: 20px;
+            }
+            .data-table {
+                font-size: 0.75rem;
+            }
+            .data-table th, .data-table td {
+                padding: 4px;
+            }
+            .stats-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+<div class="document-header">
+        <h1>🏛️ ComedK Marks vs Rank Analysis</h1>
+        <p>Comprehensive 2025 Data Analysis • Based on Parent Survey Responses</p>
+    </div>
+    <div class="document-content">
+        <h1>COMEDK 2025: Marks vs Rank Performance Analysis</h1>
+        <p><em>Based on survey responses from 50 parents whose children appeared for COMEDK 2025 • Data compiled Jan 2025</em></p>
+        <div class="insight-box">
+            <h3>📊 Key Statistical Overview</h3>
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <div class="stat-value">146</div>
+                    <div class="stat-label">Highest Marks</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-value">39</div>
+                    <div class="stat-label">Best Rank</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-value">105.5</div>
+                    <div class="stat-label">Median Marks</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-value">4,317</div>
+                    <div class="stat-label">Median Rank</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-value">96.2%</div>
+                    <div class="stat-label">Median Percentile</div>
+                </div>
+            </div>
+        </div>
+        <div class="session-analysis">
+            <h3>🕐 Session-wise Performance Analysis</h3>
+            <p><strong>Session-2 (Afternoon):</strong> Best overall performance - 17 students, Avg Marks: 106.4, Avg Rank: 8,066</p>
+            <p><strong>Session-3 (Evening):</strong> Largest group - 22 students, Avg Marks: 105.1, Avg Rank: 9,770</p>
+            <p><strong>Session-1 (Morning):</strong> Most challenging - 11 students, Avg Marks: 96.0, Avg Rank: 15,840</p>
+            <p><em>💡 Insight: Session-2 (Afternoon) showed consistently better results, possibly due to optimal timing and student readiness.</em></p>
+        </div>
+        <h2>📈 Marks Range Performance Analysis</h2>
+        <div class="marks-range">
+            <h4>🌟 140+ Marks (Excellent)</h4>
+            <p><strong>2 students</strong> • Average Rank: <strong>121</strong> • Range: 39-203 • Avg Percentile: 99.9%</p>
+            <p>💡 Elite performance - guaranteed top ranks and admission to premier colleges</p>
+        </div>
+        <div class="marks-range">
+            <h4>⭐ 130-139 Marks (Very Good)</h4>
+            <p><strong>5 students</strong> • Average Rank: <strong>291</strong> • Range: 57-569 • Avg Percentile: 99.8%</p>
+            <p>💡 Excellent performance - strong chances for CSE in top colleges</p>
+        </div>
+        <div class="marks-range">
+            <h4>✅ 120-129 Marks (Good)</h4>
+            <p><strong>5 students</strong> • Average Rank: <strong>885</strong> • Range: 545-1438 • Avg Percentile: 99.2%</p>
+            <p>💡 Good performance - competitive for popular branches in good colleges</p>
+        </div>
+        <div class="marks-range">
+            <h4>📈 110-119 Marks (Above Average)</h4>
+            <p><strong>9 students</strong> • Average Rank: <strong>2,348</strong> • Range: 1,172-3,570 • Avg Percentile: 97.9%</p>
+            <p>💡 Above average - decent chances for engineering branches in private colleges</p>
+        </div>
+        <div class="marks-range">
+            <h4>📊 100-109 Marks (Average)</h4>
+            <p><strong>10 students</strong> • Average Rank: <strong>4,806</strong> • Range: 2,136-7,379 • Avg Percentile: 95.8%</p>
+            <p>💡 Average performance - can secure admission in various engineering branches</p>
+        </div>
+        <div class="marks-range">
+            <h4>📉 90-99 Marks (Below Average)</h4>
+            <p><strong>7 students</strong> • Average Rank: <strong>11,385</strong> • Range: 4,780-25,665 • Avg Percentile: 88.9%</p>
+            <p>💡 Below average - limited options, focus on specific colleges and branches</p>
+        </div>
+        <div class="marks-range">
+            <h4>📋 80-89 Marks (Low)</h4>
+            <p><strong>3 students</strong> • Average Rank: <strong>14,456</strong> • Range: 12,979-16,547 • Avg Percentile: 87.4%</p>
+            <p>💡 Low performance - consider other entrance exams or backup options</p>
+        </div>
+        <div class="marks-range">
+            <h4>⚠️ Below 80 Marks (Very Low)</h4>
+            <p><strong>9 students</strong> • Average Rank: <strong>36,436</strong> • Range: 16,900-81,915 • Avg Percentile: 68.3%</p>
+            <p>💡 Very low performance - limited admission chances, explore alternatives</p>
+        </div>
+        <div class="comparison-box">
+            <h3>⚖️ COMEDK vs KCET Performance Comparison</h3>
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <div class="stat-value">46</div>
+                    <div class="stat-label">Students took both exams</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-value">71.7%</div>
+                    <div class="stat-label">Better COMEDK Rank</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-value">28.3%</div>
+                    <div class="stat-label">Better KCET Rank</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-value">8.7%</div>
+                    <div class="stat-label">Similar Ranks</div>
+                </div>
+            </div>
+            <p><strong>Key Finding:</strong> Most students (71.7%) performed better in COMEDK than KCET, suggesting COMEDK's all-India competition or different exam pattern suits many Karnataka students well.</p>
+        </div>
+        <div class="top-performers">
+            <h4>🏆 Top 10 COMEDK Performers</h4>
+            <table class="data-table">
+                <thead>
+                    <tr>
+                        <th>Rank</th>
+                        <th>Marks</th>
+                        <th>Percentile</th>
+                        <th>Session</th>
+                        <th>KCET Rank</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr class="highlight-row">
+                        <td><strong>39</strong></td>
+                        <td><strong>146</strong></td>
+                        <td><strong>99.97</strong></td>
+                        <td>Session-2</td>
+                        <td>180</td>
+                    </tr>
+                    <tr>
+                        <td>57</td>
+                        <td>134</td>
+                        <td>99.94</td>
+                        <td>Session-1</td>
+                        <td>640</td>
+                    </tr>
+                    <tr>
+                        <td>203</td>
+                        <td>143</td>
+                        <td>99.80</td>
+                        <td>Session-3</td>
+                        <td>194</td>
+                    </tr>
+                    <tr>
+                        <td>212</td>
+                        <td>134</td>
+                        <td>99.82</td>
+                        <td>Session-1</td>
+                        <td>856</td>
+                    </tr>
+                    <tr>
+                        <td>277</td>
+                        <td>132</td>
+                        <td>99.76</td>
+                        <td>Session-2</td>
+                        <td>460</td>
+                    </tr>
+                    <tr>
+                        <td>341</td>
+                        <td>130</td>
+                        <td>99.72</td>
+                        <td>Session-2</td>
+                        <td>889</td>
+                    </tr>
+                    <tr>
+                        <td>545</td>
+                        <td>120</td>
+                        <td>99.55</td>
+                        <td>Session-1</td>
+                        <td>546</td>
+                    </tr>
+                    <tr>
+                        <td>569</td>
+                        <td>130</td>
+                        <td>99.53</td>
+                        <td>Session-3</td>
+                        <td>782</td>
+                    </tr>
+                    <tr>
+                        <td>738</td>
+                        <td>125</td>
+                        <td>99.37</td>
+                        <td>Session-2</td>
+                        <td>2,506</td>
+                    </tr>
+                    <tr>
+                        <td>760</td>
+                        <td>127</td>
+                        <td>99.37</td>
+                        <td>Session-3</td>
+                        <td>3,623</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <h2>📋 Complete Dataset</h2>
+        <table class="data-table">
+            <thead>
+                <tr>
+                    <th>Marks</th>
+                    <th>Percentile</th>
+                    <th>Rank</th>
+                    <th>Session</th>
+                    <th>KCET Rank</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr><td>146</td><td>99.97</td><td>39</td><td>Session-2</td><td>180</td></tr>
+                <tr><td>134</td><td>99.94</td><td>57</td><td>Session-1</td><td>640</td></tr>
+                <tr><td>143</td><td>99.80</td><td>203</td><td>Session-3</td><td>194</td></tr>
+                <tr><td>134</td><td>99.82</td><td>212</td><td>Session-1</td><td>856</td></tr>
+                <tr><td>132</td><td>99.76</td><td>277</td><td>Session-2</td><td>460</td></tr>
+                <tr><td>130</td><td>99.72</td><td>341</td><td>Session-2</td><td>889</td></tr>
+                <tr><td>120</td><td>99.55</td><td>545</td><td>Session-1</td><td>546</td></tr>
+                <tr><td>130</td><td>99.53</td><td>569</td><td>Session-3</td><td>782</td></tr>
+                <tr><td>125</td><td>99.37</td><td>738</td><td>Session-2</td><td>2,506</td></tr>
+                <tr><td>127</td><td>99.37</td><td>760</td><td>Session-3</td><td>3,623</td></tr>
+                <tr><td>125</td><td>99.19</td><td>945</td><td>Session-3</td><td>5,637</td></tr>
+                <tr><td>119</td><td>98.98</td><td>1,172</td><td>Session-2</td><td>2,835</td></tr>
+                <tr><td>119</td><td>98.98</td><td>1,201</td><td>Session-2</td><td>9,595</td></tr>
+                <tr><td>121</td><td>98.70</td><td>1,438</td><td>Session-3</td><td>1,193</td></tr>
+                <tr><td>119</td><td>98.48</td><td>1,768</td><td>Session-3</td><td>3,765</td></tr>
+                <tr><td>113</td><td>98.21</td><td>2,086</td><td>Session-2</td><td>2,056</td></tr>
+                <tr><td>107</td><td>98.15</td><td>2,136</td><td>Session-1</td><td>3,276</td></tr>
+                <tr><td>113</td><td>97.56</td><td>2,805</td><td>Session-3</td><td>2,766</td></tr>
+                <tr><td>113</td><td>97.56</td><td>2,827</td><td>Session-3</td><td>4,824</td></tr>
+                <tr><td>113</td><td>97.42</td><td>2,845</td><td>Session-3</td><td>6,755</td></tr>
+                <tr><td>113</td><td>97.56</td><td>2,854</td><td>Session-3</td><td>2,500</td></tr>
+                <tr><td>109</td><td>97.00</td><td>2,905</td><td>Session-2</td><td>7,028</td></tr>
+                <tr><td>110</td><td>96.40</td><td>3,570</td><td>Session-3</td><td>-</td></tr>
+                <tr><td>100</td><td>96.00</td><td>3,960</td><td>Session-1</td><td>2,950</td></tr>
+                <tr><td>105</td><td>96.48</td><td>4,160</td><td>Session-2</td><td>1,521</td></tr>
+                <tr><td>104</td><td>96.52</td><td>4,474</td><td>Session-2</td><td>9,241</td></tr>
+                <tr><td>107</td><td>96.01</td><td>4,598</td><td>Session-3</td><td>13,219</td></tr>
+                <tr><td>97</td><td>96.00</td><td>4,780</td><td>Session-1</td><td>8,100</td></tr>
+                <tr><td>106</td><td>95.72</td><td>5,062</td><td>Session-3</td><td>3,400</td></tr>
+                <tr><td>102</td><td>94.43</td><td>6,468</td><td>Session-3</td><td>7,800</td></tr>
+                <tr><td>93</td><td>94.09</td><td>6,718</td><td>Session-1</td><td>10,840</td></tr>
+                <tr><td>101</td><td>94.07</td><td>6,919</td><td>Session-3</td><td>6,491</td></tr>
+                <tr><td>100</td><td>93.71</td><td>7,379</td><td>Session-3</td><td>18,093</td></tr>
+                <tr><td>95</td><td>92.00</td><td>8,513</td><td>Session-2</td><td>19,800</td></tr>
+                <tr><td>93</td><td>91.00</td><td>9,800</td><td>Session-2</td><td>10,400</td></tr>
+                <tr><td>90</td><td>89.70</td><td>12,030</td><td>Session-2</td><td>11,486</td></tr>
+                <tr><td>91</td><td>89.19</td><td>12,192</td><td>Session-3</td><td>25,125</td></tr>
+                <tr><td>88</td><td>88.56</td><td>12,979</td><td>Session-2</td><td>23,153</td></tr>
+                <tr><td>89</td><td>87.87</td><td>13,843</td><td>Session-3</td><td>20,875</td></tr>
+                <tr><td>88</td><td>85.78</td><td>16,547</td><td>Session-3</td><td>14,096</td></tr>
+                <tr><td>79</td><td>85.50</td><td>16,900</td><td>Session-2</td><td>23,000</td></tr>
+                <tr><td>79</td><td>85.32</td><td>16,945</td><td>Session-1</td><td>21,706</td></tr>
+                <tr><td>92</td><td>70.59</td><td>25,665</td><td>Session-2</td><td>29,434</td></tr>
+                <tr><td>69</td><td>74.50</td><td>27,450</td><td>Session-1</td><td>19,500</td></tr>
+                <tr><td>69</td><td>74.46</td><td>29,518</td><td>Session-1</td><td>66,727</td></tr>
+                <tr><td>72</td><td>72.31</td><td>31,543</td><td>Session-3</td><td>43,150</td></tr>
+                <tr><td>69</td><td>70.30</td><td>33,847</td><td>Session-2</td><td>-</td></tr>
+                <tr><td>65</td><td>65.00</td><td>42,652</td><td>Session-3</td><td>-</td></tr>
+                <tr><td>63</td><td>59.00</td><td>47,155</td><td>Session-3</td><td>34,918</td></tr>
+                <tr><td>54</td><td>28.00</td><td>81,915</td><td>Session-1</td><td>-</td></tr>
+            </tbody>
+        </table>
+        <div class="insight-box">
+            <h3>🔍 Key Insights for Exam Strategy</h3>
+            <ul>
+                <li><strong>Marks vs Rank Correlation:</strong> Strong correlation - every 10 marks improvement typically results in 1000-2000 rank improvement in middle ranges</li>
+                <li><strong>Percentile Reliability:</strong> Percentiles are more reliable indicators than raw marks due to normalization across sessions</li>
+                <li><strong>COMEDK vs KCET:</strong> 72% of students performed better in COMEDK, suggesting it's a viable alternative for Karnataka students</li>
+                <li><strong>Competition Level:</strong> High competition - even 120+ marks can result in ranks beyond 1000</li>
+                <li><strong>Safe Score:</strong> 130+ marks generally ensure ranks under 600, providing good college options</li>
+            </ul>
+        </div>
+        <div class="warning">
+            <strong>⚠️ Important Disclaimers:</strong>
+            <ul>
+                <li>This data is based on parent survey responses and may not represent the complete population</li>
+                <li>Ranks and cutoffs vary year to year based on difficulty level and candidate pool</li>
+                <li>Session-wise difficulty can change, affecting the correlation patterns observed</li>
+                <li>Always refer to official COMEDK websites for latest information and cutoffs</li>
+                <li>This analysis is for reference only - actual results may vary significantly</li>
+            </ul>
+        </div>
+        <div class="insight-box">
+            <h3>📝 Survey Methodology</h3>
+            <p>This analysis is based on responses from 50 parents whose children appeared for COMEDK 2025. The survey collected:</p>
+            <ul>
+                <li>Student's COMEDK marks out of 180</li>
+                <li>Overall percentile as shown in rank card</li>
+                <li>COMEDK rank achieved</li>
+                <li>Session timing (Morning/Afternoon/Evening)</li>
+                <li>KCET rank for comparison (where applicable)</li>
+            </ul>
+            <p><em>Data compilation and analysis: January 2025</em></p>
+        </div>
+    </div>
+    </body>
+</html>

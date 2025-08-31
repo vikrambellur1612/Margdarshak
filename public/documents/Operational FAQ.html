@@ -1,0 +1,792 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Operational FAQ - Margdarshak FAQ</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #f8f9fa;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        .header {
+            text-align: center;
+            margin-bottom: 40px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 40px 20px;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+        .header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+            font-weight: 700;
+        }
+        .header p {
+            font-size: 1.1rem;
+            opacity: 0.9;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        .disclaimer {
+            background: #fff3cd;
+            border: 1px solid #ffeaa7;
+            border-radius: 10px;
+            padding: 20px;
+            margin-bottom: 30px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+        }
+        .disclaimer h3 {
+            color: #856404;
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        .disclaimer p {
+            color: #856404;
+            font-size: 0.95rem;
+        }
+        .search-container {
+            background: white;
+            padding: 25px;
+            border-radius: 15px;
+            margin-bottom: 30px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+        }
+        .search-box {
+            position: relative;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        #searchInput {
+            width: 100%;
+            padding: 15px 50px 15px 20px;
+            font-size: 1.1rem;
+            border: 2px solid #e9ecef;
+            border-radius: 25px;
+            outline: none;
+            transition: all 0.3s ease;
+        }
+        #searchInput:focus {
+            border-color: #667eea;
+            box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+        }
+        .search-icon {
+            position: absolute;
+            right: 20px;
+            top: 50%;
+            transform: translateY(-50%);
+            color: #6c757d;
+            font-size: 1.2rem;
+        }
+        .category-nav {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            justify-content: center;
+            margin-bottom: 30px;
+        }
+        .category-btn {
+            background: white;
+            border: 2px solid #e9ecef;
+            padding: 12px 24px;
+            border-radius: 25px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-weight: 500;
+            color: #495057;
+        }
+        .category-btn:hover,
+        .category-btn.active {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            border-color: transparent;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 15px rgba(102, 126, 234, 0.3);
+        }
+        .faq-section {
+            background: white;
+            border-radius: 15px;
+            margin-bottom: 20px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+            overflow: hidden;
+            transition: all 0.3s ease;
+        }
+        .faq-section:hover {
+            box-shadow: 0 8px 30px rgba(0,0,0,0.12);
+        }
+        .section-header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 20px 25px;
+            font-size: 1.3rem;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+        .faq-item {
+            border-bottom: 1px solid #f8f9fa;
+            transition: background-color 0.3s ease;
+        }
+        .faq-item:last-child {
+            border-bottom: none;
+        }
+        .faq-item:hover {
+            background-color: #f8f9fa;
+        }
+        .faq-question {
+            padding: 20px 25px;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-weight: 600;
+            color: #495057;
+            transition: all 0.3s ease;
+        }
+        .faq-question:hover {
+            color: #667eea;
+        }
+        .faq-answer {
+            padding: 0 25px 25px 25px;
+            color: #6c757d;
+            line-height: 1.7;
+            display: none;
+        }
+        .faq-answer.active {
+            display: block;
+            animation: fadeInDown 0.3s ease;
+        }
+        .faq-answer ul {
+            margin: 15px 0;
+            padding-left: 20px;
+        }
+        .faq-answer li {
+            margin-bottom: 8px;
+        }
+        .faq-answer strong {
+            color: #495057;
+        }
+        .expand-icon {
+            transition: transform 0.3s ease;
+            font-size: 1.2rem;
+            color: #667eea;
+        }
+        .expand-icon.rotated {
+            transform: rotate(180deg);
+        }
+        .highlight {
+            background-color: #fff3cd;
+            padding: 2px 4px;
+            border-radius: 3px;
+        }
+        .no-results {
+            text-align: center;
+            padding: 60px 20px;
+            color: #6c757d;
+            font-size: 1.1rem;
+        }
+        .no-results img {
+            width: 150px;
+            height: 150px;
+            opacity: 0.5;
+            margin-bottom: 20px;
+        }
+        @keyframes fadeInDown {
+            from {
+                opacity: 0;
+                transform: translateY(-10px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        @media (max-width: 768px) {
+            .header h1 {
+                font-size: 2rem;
+            }
+            .category-nav {
+                gap: 8px;
+            }
+            .category-btn {
+                padding: 10px 16px;
+                font-size: 0.9rem;
+            }
+            .faq-question,
+            .faq-answer {
+                padding-left: 20px;
+                padding-right: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+        <div class="header">
+            <h1>🎯 Operational FAQ</h1>
+            <p>Comprehensive guidance based on real parent experiences from Margdarshak operational discussions</p>
+        </div>
+        <div class="disclaimer">
+            <h3>⚠️ Important Disclaimer</h3>
+            <p><strong>Data Source:</strong> This FAQ is compiled from actual WhatsApp chat discussions among Margdarshak parents during 2024-25 admissions cycle. The information reflects real experiences, challenges, and solutions shared by the parent community. Individual experiences may vary based on specific exam centers, timing, and circumstances.</p>
+        </div>
+        <div class="search-container">
+            <div class="search-box">
+                <input type="text" id="searchInput" placeholder="Search for operational guidance, center reviews, exam procedures..." />
+                <span class="search-icon">🔍</span>
+            </div>
+        </div>
+        <div class="category-nav">
+            <button class="category-btn active" data-category="all">All Categories</button>
+            <button class="category-btn" data-category="exam-centers">Exam Centers</button>
+            <button class="category-btn" data-category="logistics">Travel & Logistics</button>
+            <button class="category-btn" data-category="procedures">Exam Procedures</button>
+            <button class="category-btn" data-category="technology">Technical Issues</button>
+            <button class="category-btn" data-category="documentation">Documentation</button>
+            <button class="category-btn" data-category="timing">Timing & Scheduling</button>
+        </div>
+        <!-- Exam Centers Section -->
+        <div class="faq-section" data-category="exam-centers">
+            <div class="section-header">
+                🏢 Exam Centers - Reviews & Facilities
+            </div>
+            <div class="faq-item">
+                <div class="faq-question">
+                    What are the experiences with popular exam centers in Bangalore?
+                    <span class="expand-icon">▼</span>
+                </div>
+                <div class="faq-answer">
+                    <strong>Based on parent experiences:</strong>
+                    <ul>
+                        <li><strong>Rain Cloud Technologies, Peenya:</strong> Frequently mentioned as problematic - old systems, mouse issues, poor infrastructure. Many parents describe it as "nightmare center"</li>
+                        <li><strong>Digimetrics, Hoskote:</strong> 45km from city center, limited parking, no parent seating arrangements, but systems generally work</li>
+                        <li><strong>Cambridge Institute, KR Puram:</strong> Good parking availability, nearby eateries, decent infrastructure for parents</li>
+                        <li><strong>SEA PU College, KR Puram:</strong> Excellent parent facilities - serves tea/biscuits, auditorium for waiting, very organized</li>
+                        <li><strong>New Horizon PU College:</strong> Professional management, good facilities, allows dining hall access for lunch</li>
+                        <li><strong>Cathedral PU College:</strong> Parking inside campus, space for parents near canteen, helpful staff</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-question">
+                    How do I find parking and facilities near my exam center?
+                    <span class="expand-icon">▼</span>
+                </div>
+                <div class="faq-answer">
+                    <strong>General Parking Solutions:</strong>
+                    <ul>
+                        <li><strong>Mall Parking:</strong> Forum Mall, Nexus Mall, Garuda Mall often used for nearby centers</li>
+                        <li><strong>Metro Stations:</strong> Park at metro stations and take public transport</li>
+                        <li><strong>Religious Places:</strong> Temples near exam centers often allow parking (Om Shakti temple mentioned frequently)</li>
+                        <li><strong>Bylanes:</strong> Small roads adjacent to colleges usually have some parking space</li>
+                    </ul>
+                    <strong>Parent Waiting Areas:</strong>
+                    <ul>
+                        <li>Some centers provide auditoriums or halls for parents</li>
+                        <li>Nearby malls and cafes are backup options</li>
+                        <li>Some centers strictly don't allow parents inside campus</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-question">
+                    What should I know about center allocation patterns?
+                    <span class="expand-icon">▼</span>
+                </div>
+                <div class="faq-answer">
+                    <strong>Center Allocation Logic:</strong>
+                    <ul>
+                        <li>Centers are often 30-40km away from home location to ensure student-examiner anonymity</li>
+                        <li>Same centers often allocated for multiple exams (JEE, KCET, private exams)</li>
+                        <li>Logic varies by exam - some use pin codes, others seem random</li>
+                        <li>Rural/government centers may have limited facilities but are generally well-managed</li>
+                    </ul>
+                    <strong>Distance Patterns:</strong>
+                    <ul>
+                        <li>Minimum 30km distance is common</li>
+                        <li>Cross-city travel is typical (Sarjapur to Peenya, etc.)</li>
+                        <li>Plan for 2+ hours travel time including traffic</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <!-- Travel & Logistics Section -->
+        <div class="faq-section" data-category="logistics">
+            <div class="section-header">
+                🚗 Travel & Logistics Planning
+            </div>
+            <div class="faq-item">
+                <div class="faq-question">
+                    How should I plan travel for distant exam centers?
+                    <span class="expand-icon">▼</span>
+                </div>
+                <div class="faq-answer">
+                    <strong>Travel Planning Tips:</strong>
+                    <ul>
+                        <li><strong>Book Hotels:</strong> For centers 40+ km away, consider booking nearby hotels (Treebo, OYO mentioned)</li>
+                        <li><strong>Metro + Auto:</strong> Use metro to closest station, then auto to center</li>
+                        <li><strong>Leave Early:</strong> Plan to reach 2 hours before exam time</li>
+                        <li><strong>Multiple Days:</strong> For back-to-back exams at same center, consider staying overnight</li>
+                    </ul>
+                    <strong>Common Routes Mentioned:</strong>
+                    <ul>
+                        <li>Sarjapur to Peenya: Metro via Byappanahalli, then auto</li>
+                        <li>Hoskote centers: Direct car travel recommended due to limited public transport</li>
+                        <li>Mysore centers: Parents often prefer train travel</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-question">
+                    What are the traffic and timing considerations?
+                    <span class="expand-icon">▼</span>
+                </div>
+                <div class="faq-answer">
+                    <strong>Traffic Planning:</strong>
+                    <ul>
+                        <li>Morning rush hour: 8:30-10:30 AM significantly impacts travel time</li>
+                        <li>Industrial areas (Peenya) have heavy commercial vehicle traffic</li>
+                        <li>Outer ring road and highway stretches can be unpredictable</li>
+                        <li>Weather impacts: Rain can double travel time</li>
+                    </ul>
+                    <strong>Timing Strategy:</strong>
+                    <ul>
+                        <li>Leave home minimum 2.5 hours before exam for distant centers</li>
+                        <li>Account for security check and entry procedures (30-45 minutes)</li>
+                        <li>Factor in fuel/food stops for long journeys</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <!-- Exam Procedures Section -->
+        <div class="faq-section" data-category="procedures">
+            <div class="section-header">
+                📋 Exam Day Procedures & Protocols
+            </div>
+            <div class="faq-item">
+                <div class="faq-question">
+                    What is the typical exam day timeline and procedures?
+                    <span class="expand-icon">▼</span>
+                </div>
+                <div class="faq-answer">
+                    <strong>KCET Exam Day Timeline:</strong>
+                    <ul>
+                        <li><strong>Gate Opening:</strong> Usually 9:00-9:30 AM (centers vary)</li>
+                        <li><strong>Entry Process:</strong> Document verification, frisking, biometric (when working)</li>
+                        <li><strong>Hall Entry:</strong> 30-45 minutes before exam start</li>
+                        <li><strong>OMR Instructions:</strong> 10 minutes for form filling</li>
+                        <li><strong>Exam Duration:</strong> 70 minutes (60 questions + 10 minutes)</li>
+                        <li><strong>Lunch Break:</strong> 2-3 hours between sessions</li>
+                    </ul>
+                    <strong>Entry Requirements:</strong>
+                    <ul>
+                        <li>Admit card (color print recommended)</li>
+                        <li>Aadhaar card or school ID</li>
+                        <li>Blue/black ball pen</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-question">
+                    What items are allowed and prohibited in exam halls?
+                    <span class="expand-icon">▼</span>
+                </div>
+                <div class="faq-answer">
+                    <strong>Allowed Items:</strong>
+                    <ul>
+                        <li>Admit card and photo ID</li>
+                        <li>Blue/black ball pen (some centers provide)</li>
+                        <li>Transparent water bottle (center-dependent)</li>
+                        <li>Simple clothing without metal accessories</li>
+                    </ul>
+                    <strong>Prohibited Items:</strong>
+                    <ul>
+                        <li>Mobile phones and electronic devices</li>
+                        <li>Watches, jewelry, metal accessories</li>
+                        <li>Belts, shoes (sandals preferred)</li>
+                        <li>Pencils, erasers, whiteners</li>
+                        <li>Food items and non-transparent bottles</li>
+                    </ul>
+                    <strong>Dress Code Guidelines:</strong>
+                    <ul>
+                        <li>No jeans for both boys and girls</li>
+                        <li>Half sleeves or sleeveless preferred</li>
+                        <li>No metal buttons or zippers</li>
+                        <li>Remove all ornaments including earrings</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-question">
+                    How do OMR filling and rough work procedures work?
+                    <span class="expand-icon">▼</span>
+                </div>
+                <div class="faq-answer">
+                    <strong>OMR Sheet Guidelines:</strong>
+                    <ul>
+                        <li>Serial numbers are pre-printed on OMR sheets</li>
+                        <li>Students must bubble question paper version number</li>
+                        <li>No erasers/whiteners allowed - be careful with bubbling</li>
+                        <li>Invigilators provide detailed instructions before exam</li>
+                    </ul>
+                    <strong>Rough Work:</strong>
+                    <ul>
+                        <li>Use question paper margins and bottom space</li>
+                        <li>Last page of question booklet designated for calculations</li>
+                        <li>No separate rough sheets provided</li>
+                        <li>Write lightly with pen to allow reuse of space</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <!-- Technical Issues Section -->
+        <div class="faq-section" data-category="technology">
+            <div class="section-header">
+                💻 Technical Issues & Solutions
+            </div>
+            <div class="faq-item">
+                <div class="faq-question">
+                    What are common website and portal issues during exam season?
+                    <span class="expand-icon">▼</span>
+                </div>
+                <div class="faq-answer">
+                    <strong>Common Portal Problems:</strong>
+                    <ul>
+                        <li><strong>Login Issues:</strong> "Invalid username/password" errors despite correct credentials</li>
+                        <li><strong>OTP Problems:</strong> OTPs come to WhatsApp instead of SMS, or to alternate numbers</li>
+                        <li><strong>Server Overload:</strong> Websites crash during peak access times</li>
+                        <li><strong>Browser Compatibility:</strong> Some sites work only on specific browsers</li>
+                        <li><strong>Session Timeout:</strong> Automatic logouts during form filling</li>
+                    </ul>
+                    <strong>Quick Solutions:</strong>
+                    <ul>
+                        <li>Try different browsers (Chrome, Firefox, Edge)</li>
+                        <li>Clear browser cache and cookies</li>
+                        <li>Use incognito/private mode</li>
+                        <li>Switch between mobile and desktop</li>
+                        <li>Try during off-peak hours (early morning/late night)</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-question">
+                    How do I handle biometric and QR code verification failures?
+                    <span class="expand-icon">▼</span>
+                </div>
+                <div class="faq-answer">
+                    <strong>Biometric Issues:</strong>
+                    <ul>
+                        <li>Network connectivity problems cause most failures</li>
+                        <li>Centers often switch to manual verification</li>
+                        <li>Download fresh admit card if QR code scanning fails</li>
+                        <li>Carry both Aadhaar and school ID as backup</li>
+                    </ul>
+                    <strong>Backup Verification:</strong>
+                    <ul>
+                        <li>Photo matching with ID cards</li>
+                        <li>Manual verification by invigilators</li>
+                        <li>School ID cards often accepted when Aadhaar scanning fails</li>
+                        <li>Parents may be called to verify identity in extreme cases</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-question">
+                    What should I know about online exam technical requirements?
+                    <span class="expand-icon">▼</span>
+                </div>
+                <div class="faq-answer">
+                    <strong>SRM Online Exam Experience:</strong>
+                    <ul>
+                        <li>Proctored exam with strict monitoring</li>
+                        <li>System detects any devices around the candidate</li>
+                        <li>Looking away from screen triggers warnings</li>
+                        <li>No review option - answers are final once submitted</li>
+                        <li>Stable internet connection absolutely critical</li>
+                    </ul>
+                    <strong>Technical Preparation:</strong>
+                    <ul>
+                        <li>Test internet speed and stability beforehand</li>
+                        <li>Remove all electronic devices from exam room</li>
+                        <li>Ensure good lighting for face recognition</li>
+                        <li>Take mock test to familiarize with interface</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <!-- Documentation Section -->
+        <div class="faq-section" data-category="documentation">
+            <div class="section-header">
+                📄 Documentation & Verification
+            </div>
+            <div class="faq-item">
+                <div class="faq-question">
+                    What documents are needed for KCET verification process?
+                    <span class="expand-icon">▼</span>
+                </div>
+                <div class="faq-answer">
+                    <strong>Clause-Based Requirements:</strong>
+                    <ul>
+                        <li><strong>Clause A (7+ years in Karnataka):</strong> Usually no additional verification needed</li>
+                        <li><strong>Clause B-Z:</strong> Require physical document verification at KEA office</li>
+                    </ul>
+                    <strong>Common Required Documents:</strong>
+                    <ul>
+                        <li>Study certificates for required years</li>
+                        <li>Provisional marks certificates (attested by principal)</li>
+                        <li>Bonafide certificates from schools/colleges</li>
+                        <li>Affidavits for specific claims (notarized)</li>
+                        <li>Domicile/residence proof documents</li>
+                    </ul>
+                    <strong>Document Preparation Tips:</strong>
+                    <ul>
+                        <li>Get school attestation on all printouts</li>
+                        <li>Prepare affidavits from notaries near KEA office</li>
+                        <li>Contact KEA helpline for specific requirements</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-question">
+                    How do I handle admit card and result-related documentation?
+                    <span class="expand-icon">▼</span>
+                </div>
+                <div class="faq-answer">
+                    <strong>Admit Card Best Practices:</strong>
+                    <ul>
+                        <li>Always take color printouts for all exams</li>
+                        <li>Download fresh copies if QR codes don't work</li>
+                        <li>Keep multiple copies as backup</li>
+                        <li>Verify all details immediately after download</li>
+                    </ul>
+                    <strong>Result Documentation:</strong>
+                    <ul>
+                        <li>Download results immediately when announced</li>
+                        <li>Take screenshots/printouts before results disappear</li>
+                        <li>Keep digital and physical copies</li>
+                        <li>Verify marks calculation independently</li>
+                    </ul>
+                    <strong>Revaluation Process:</strong>
+                    <ul>
+                        <li>Apply for scanned copies first to check answer sheets</li>
+                        <li>Revaluation can both increase or decrease marks</li>
+                        <li>Consult subject teachers before applying for revaluation</li>
+                        <li>Follow up with board offices for discrepancies</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <!-- Timing & Scheduling Section -->
+        <div class="faq-section" data-category="timing">
+            <div class="section-header">
+                ⏰ Timing & Scheduling Management
+            </div>
+            <div class="faq-item">
+                <div class="faq-question">
+                    How do I manage multiple exam schedules and slot bookings?
+                    <span class="expand-icon">▼</span>
+                </div>
+                <div class="faq-answer">
+                    <strong>Common Scheduling Conflicts:</strong>
+                    <ul>
+                        <li>JEE Main Session 2 vs other private exams</li>
+                        <li>CBSE board improvement vs entrance exams</li>
+                        <li>Multiple private university exams on same dates</li>
+                        <li>KCET vs MHT-CET timing overlaps</li>
+                    </ul>
+                    <strong>Slot Booking Strategy:</strong>
+                    <ul>
+                        <li>Book slots immediately when portals open</li>
+                        <li>Preferred dates get filled within hours</li>
+                        <li>Keep backup exam dates ready</li>
+                        <li>Monitor university communications for date extensions</li>
+                    </ul>
+                    <strong>Priority Management:</strong>
+                    <ul>
+                        <li>Prioritize government exams (JEE, KCET) over private</li>
+                        <li>Choose geographically convenient exam centers</li>
+                        <li>Consider travel time between consecutive exams</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-question">
+                    What are the key dates and deadlines to track?
+                    <span class="expand-icon">▼</span>
+                </div>
+                <div class="faq-answer">
+                    <strong>Critical Deadlines:</strong>
+                    <ul>
+                        <li><strong>Board Improvement Exams:</strong> Application deadlines very short (2-3 days)</li>
+                        <li><strong>Private University Phase 2:</strong> Payment windows of 37-48 hours only</li>
+                        <li><strong>Document Verification:</strong> Limited slots, book immediately when available</li>
+                        <li><strong>Counselling Registration:</strong> Non-refundable fees with tight deadlines</li>
+                    </ul>
+                    <strong>Timeline Management:</strong>
+                    <ul>
+                        <li>Set calendar reminders for all important dates</li>
+                        <li>Follow official social media accounts for updates</li>
+                        <li>Join parent WhatsApp groups for real-time information</li>
+                        <li>Have payment methods ready for quick transactions</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-question">
+                    How do late entry policies and exam timing work?
+                    <span class="expand-icon">▼</span>
+                </div>
+                <div class="faq-answer">
+                    <strong>Late Entry Policies:</strong>
+                    <ul>
+                        <li><strong>KCET:</strong> Generally flexible, some centers allow entry up to 10:45 AM</li>
+                        <li><strong>JEE/NTA Exams:</strong> Strict 30-minute cutoff, no exceptions</li>
+                        <li><strong>Private Exams:</strong> Varies by institution and center</li>
+                    </ul>
+                    <strong>Timing Variations:</strong>
+                    <ul>
+                        <li>Some centers start 5-10 minutes late due to logistics</li>
+                        <li>Compensation time given for administrative delays</li>
+                        <li>Different halls may have slightly different timings</li>
+                        <li>Announcements made via PA system for timing changes</li>
+                    </ul>
+                    <strong>Safety Buffer:</strong>
+                    <ul>
+                        <li>Plan to reach center 60-90 minutes early</li>
+                        <li>Account for unexpected delays in entry process</li>
+                        <li>Keep emergency contact numbers of exam authorities</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="no-results" id="noResults" style="display: none;">
+            <h3>🔍 No results found</h3>
+            <p>Try adjusting your search terms or browse categories above</p>
+        </div>
+    </div>
+    <script>
+        // Search functionality
+        const searchInput = document.getElementById('searchInput');
+        const faqSections = document.querySelectorAll('.faq-section');
+        const faqItems = document.querySelectorAll('.faq-item');
+        const categoryBtns = document.querySelectorAll('.category-btn');
+        const noResults = document.getElementById('noResults');
+        // Toggle FAQ answers
+        document.querySelectorAll('.faq-question').forEach(question => {
+            question.addEventListener('click', () => {
+                const answer = question.nextElementSibling;
+                const icon = question.querySelector('.expand-icon');
+                answer.classList.toggle('active');
+                icon.classList.toggle('rotated');
+            });
+        });
+        // Search functionality
+        searchInput.addEventListener('input', (e) => {
+            const searchTerm = e.target.value.toLowerCase();
+            let hasResults = false;
+            faqItems.forEach(item => {
+                const question = item.querySelector('.faq-question').textContent.toLowerCase();
+                const answer = item.querySelector('.faq-answer').textContent.toLowerCase();
+                if (question.includes(searchTerm) || answer.includes(searchTerm)) {
+                    item.style.display = 'block';
+                    item.parentElement.style.display = 'block';
+                    hasResults = true;
+                    // Highlight search terms
+                    if (searchTerm) {
+                        highlightText(item, searchTerm);
+                    }
+                } else {
+                    item.style.display = 'none';
+                }
+            });
+            // Hide sections with no visible items
+            faqSections.forEach(section => {
+                const visibleItems = section.querySelectorAll('.faq-item[style*="block"]');
+                if (visibleItems.length === 0) {
+                    section.style.display = 'none';
+                } else {
+                    section.style.display = 'block';
+                }
+            });
+            noResults.style.display = hasResults ? 'none' : 'block';
+        });
+        // Category filtering
+        categoryBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                const category = btn.dataset.category;
+                // Update active button
+                categoryBtns.forEach(b => b.classList.remove('active'));
+                btn.classList.add('active');
+                // Filter sections
+                faqSections.forEach(section => {
+                    if (category === 'all' || section.dataset.category === category) {
+                        section.style.display = 'block';
+                        // Show all items in visible sections
+                        section.querySelectorAll('.faq-item').forEach(item => {
+                            item.style.display = 'block';
+                        });
+                    } else {
+                        section.style.display = 'none';
+                    }
+                });
+                // Clear search
+                searchInput.value = '';
+                noResults.style.display = 'none';
+            });
+        });
+        // Highlight search terms
+        function highlightText(element, searchTerm) {
+            const walker = document.createTreeWalker(
+                element,
+                NodeFilter.SHOW_TEXT,
+                null,
+                false
+            );
+            const textNodes = [];
+            let node;
+            while (node = walker.nextNode()) {
+                textNodes.push(node);
+            }
+            textNodes.forEach(textNode => {
+                const parent = textNode.parentNode;
+                const text = textNode.textContent;
+                const regex = new RegExp(`(${searchTerm})`, 'gi');
+                if (regex.test(text)) {
+                    const highlightedText = text.replace(regex, '<span class="highlight">$1</span>');
+                    const wrapper = document.createElement('div');
+                    wrapper.innerHTML = highlightedText;
+                    while (wrapper.firstChild) {
+                        parent.insertBefore(wrapper.firstChild, textNode);
+                    }
+                    parent.removeChild(textNode);
+                }
+            });
+        }
+        // Initialize page
+        document.addEventListener('DOMContentLoaded', () => {
+            // Expand first few FAQ items by default
+            document.querySelectorAll('.faq-question').forEach((question, index) => {
+                if (index < 2) {
+                    question.click();
+                }
+            });
+        });
+    </script>
+    </body>
+</html>

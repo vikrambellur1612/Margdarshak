@@ -1,0 +1,6 @@
+# Redirect all document requests to the documents folder
+/documents/* /documents/:splat 200
+/data/* /data/:splat 200
+
+# Handle any other requests (SPA fallback)
+/* /index.html 200

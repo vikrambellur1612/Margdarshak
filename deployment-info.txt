@@ -1,0 +1,4 @@
+Deployment Time: Wed Jul 30 21:10:01 IST 2025
+Timestamp: 1753890001
+Files Updated: All HTML documents cleaned of navigation elements
+Cache Strategy: No-cache for HTML, 5-minute cache for documents

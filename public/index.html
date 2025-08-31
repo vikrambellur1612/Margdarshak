@@ -1,0 +1,2864 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Margdarshak FAQ - Pro-bono Guidance for 12th Grade Parents</title>
+    
+    <!-- PWA Meta Tags -->
+    <meta name="theme-color" content="#2c5aa0">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="default">
+    <meta name="apple-mobile-web-app-title" content="Margdarshak FAQ">
+    <meta name="description" content="Pro-bono guidance for 12th grade parents - Engineering, Medical, Science and Mathematics admissions in India">
+    
+    <!-- PWA Manifest -->
+    <link rel="manifest" href="./manifest.json">
+    
+    <!-- PWA Icons -->
+    <link rel="icon" type="image/png" sizes="32x32" href="./icons/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="./icons/icon-192x192.png">
+    
+    <!-- Apple Touch Icons -->
+    <link rel="apple-touch-icon" sizes="180x180" href="./icons/apple-touch-icon.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="./icons/icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="./icons/icon-144x144.png">
+    
+    <!-- PWA Theme Colors for Different Platforms -->
+    <meta name="msapplication-TileColor" content="#2c5aa0">
+    <meta name="msapplication-TileImage" content="./icons/icon-144x144.png">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+        }
+
+        /* Prevent scrolling when mobile menu is open */
+        body.menu-open {
+            overflow: hidden;
+            position: fixed;
+            width: 100%;
+        }
+
+        .container {
+            display: flex;
+            min-height: 100vh;
+        }
+
+        /* Sidebar Styles */
+        .sidebar {
+            width: 280px;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            box-shadow: 2px 0 10px rgba(0,0,0,0.1);
+            overflow-y: auto;
+            z-index: 1000;
+            transition: transform 0.3s ease;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .sidebar-header {
+            background: linear-gradient(135deg, #2c5aa0 0%, #1e3a8a 100%);
+            color: white;
+            padding: 20px;
+            text-align: center;
+            cursor: pointer;
+            transition: background 0.3s ease;
+        }
+
+        .sidebar-header:hover {
+            background: linear-gradient(135deg, #1e3a8a 0%, #2c5aa0 100%);
+        }
+
+        .sidebar-header h2 {
+            margin: 0;
+            font-size: 1.5rem;
+        }
+
+        .sidebar-menu {
+            padding: 20px 0;
+        }
+
+        .menu-item {
+            display: block;
+            padding: 12px 20px;
+            color: #333;
+            text-decoration: none;
+            border-bottom: 1px solid #eee;
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+
+        .menu-item:hover {
+            background: #f8f9fa;
+            color: #2c5aa0;
+            padding-left: 25px;
+        }
+
+        /* Sub-menu styles */
+        .menu-item.has-submenu {
+            position: relative;
+        }
+
+        .submenu-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 12px 20px;
+            color: #333;
+            border-bottom: 1px solid #eee;
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+
+        .submenu-header:hover {
+            background: #f8f9fa;
+            color: #2c5aa0;
+            padding-left: 25px;
+        }
+
+        .submenu-arrow {
+            transition: transform 0.3s ease;
+            font-size: 12px;
+        }
+
+        .submenu-arrow.expanded {
+            transform: rotate(90deg);
+        }
+
+        .submenu {
+            background: #f8f9fa;
+            display: none;
+            animation: slideDown 0.3s ease;
+        }
+
+        .submenu.expanded {
+            display: block;
+        }
+
+        @keyframes slideDown {
+            from {
+                opacity: 0;
+                max-height: 0;
+            }
+            to {
+                opacity: 1;
+                max-height: 200px;
+            }
+        }
+
+        .submenu-item {
+            display: block;
+            padding: 10px 30px 10px 40px;
+            color: #555;
+            text-decoration: none;
+            border-bottom: 1px solid #e9ecef;
+            transition: all 0.3s ease;
+            font-size: 0.9rem;
+        }
+
+        .submenu-item:hover {
+            background: #e9ecef;
+            color: #2c5aa0;
+            padding-left: 45px;
+        }
+
+        /* Nested Submenu Styles */
+        .nested-submenu-item {
+            margin: 0;
+        }
+
+        .nested-submenu-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 8px 30px 8px 40px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            color: #666;
+            font-size: 0.85rem;
+            font-weight: 500;
+            border-left: 3px solid #2c5aa0;
+            margin-left: 10px;
+        }
+
+        .nested-submenu-header:hover {
+            background: #f8f9fa;
+            color: #2c5aa0;
+        }
+
+        .nested-submenu-arrow {
+            transition: transform 0.3s ease;
+            font-size: 0.8rem;
+            color: #2c5aa0;
+        }
+
+        .nested-submenu-arrow.expanded {
+            transform: rotate(90deg);
+        }
+
+        .nested-submenu {
+            overflow: visible; /* Changed from hidden to visible */
+            max-height: 0;
+            opacity: 0;
+            transition: all 0.4s ease;
+            background: #f8f9fa;
+            margin-left: 10px;
+            border-radius: 0 0 8px 8px;
+        }
+
+        .nested-submenu.expanded {
+            opacity: 1;
+            max-height: 800px; /* Increased to accommodate all nested items */
+            animation: nestedSubmenuSlide 0.4s ease-out;
+        }
+
+        @keyframes nestedSubmenuSlide {
+            from {
+                opacity: 0;
+                max-height: 0;
+            }
+            to {
+                opacity: 1;
+                max-height: 800px; /* Increased to accommodate all items */
+            }
+        }
+
+        .nested-submenu-item-link {
+            display: block;
+            padding: 8px 25px 8px 50px;
+            color: #666;
+            text-decoration: none;
+            border-bottom: 1px solid #e9ecef;
+            transition: all 0.3s ease;
+            font-size: 0.8rem;
+            border-left: 2px solid transparent;
+        }
+
+        .nested-submenu-item-link:hover {
+            background: #e9ecef;
+            color: #2c5aa0;
+            padding-left: 55px;
+            border-left-color: #2c5aa0;
+        }
+
+        /* Coming Soon Item Styles */
+        .submenu-item.coming-soon,
+        .nested-submenu-item-link.coming-soon {
+            color: #999 !important;
+            cursor: default !important;
+            font-style: italic;
+        }
+
+        .submenu-item.coming-soon:hover,
+        .nested-submenu-item-link.coming-soon:hover {
+            background: transparent !important;
+            padding-left: 40px !important;
+            color: #999 !important;
+            border-left-color: transparent !important;
+        }
+
+        /* Search Functionality Styles - REMOVED: Using AI Chatbot instead */
+
+        .sidebar-menu {
+            position: relative;
+        }
+
+        /* Main Content Styles */
+        .main-content {
+            flex: 1;
+            padding: 40px;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            margin: 20px;
+            border-radius: 15px;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+            overflow-y: auto;
+        }
+
+        .hero-section {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        .hero-section h1 {
+            font-size: 3rem;
+            color: #2c5aa0;
+            margin-bottom: 20px;
+            background: linear-gradient(135deg, #2c5aa0, #667eea);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .hero-section .subtitle {
+            font-size: 1.2rem;
+            color: #666;
+            margin-bottom: 30px;
+        }
+
+        .content-section {
+            max-width: 800px;
+            margin: 0 auto;
+            text-align: left;
+        }
+
+        .content-card {
+            background: white;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+            margin-bottom: 30px;
+        }
+
+        .content-card h2 {
+            color: #2c5aa0;
+            margin-bottom: 20px;
+            font-size: 1.5rem;
+        }
+
+        /* AI Chatbot Styles */
+        .ai-chatbot-container {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            border-radius: 20px;
+            padding: 30px;
+            margin: 30px 0;
+            color: white;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+        }
+
+        .chatbot-header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 20px;
+        }
+
+        .chatbot-title {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 1.3rem;
+            font-weight: 600;
+        }
+
+        .chatbot-status {
+            padding: 4px 12px;
+            background: rgba(255, 255, 255, 0.2);
+            border-radius: 12px;
+            font-size: 0.8rem;
+            backdrop-filter: blur(10px);
+        }
+
+        .chatbot-input-container {
+            display: flex;
+            gap: 10px;
+            margin-bottom: 15px;
+        }
+
+        .chatbot-input {
+            flex: 1;
+            padding: 15px;
+            border: none;
+            border-radius: 12px;
+            font-size: 1rem;
+            outline: none;
+            background: rgba(255, 255, 255, 0.95);
+            color: #333;
+            backdrop-filter: blur(10px);
+        }
+
+        .chatbot-input::placeholder {
+            color: #666;
+        }
+
+        .chatbot-send-btn {
+            padding: 15px 25px;
+            background: #2c5aa0;
+            color: white;
+            border: none;
+            border-radius: 12px;
+            cursor: pointer;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .chatbot-send-btn:hover {
+            background: #1e3a8a;
+            transform: translateY(-2px);
+        }
+
+        .chatbot-send-btn:disabled {
+            opacity: 0.6;
+            cursor: not-allowed;
+            transform: none;
+        }
+
+        .chatbot-response {
+            background: rgba(255, 255, 255, 0.15);
+            border-radius: 12px;
+            padding: 20px;
+            margin-top: 15px;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            display: none;
+        }
+
+        .chatbot-response.show {
+            display: block;
+            animation: fadeInUp 0.4s ease-out;
+        }
+
+        .response-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 10px;
+            font-size: 0.9rem;
+            opacity: 0.8;
+        }
+
+        .response-actions {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .clear-response-btn {
+            background: rgba(239, 68, 68, 0.2);
+            border: 1px solid rgba(239, 68, 68, 0.3);
+            color: #dc2626;
+            padding: 4px 8px;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 0.8rem;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-width: 24px;
+            height: 24px;
+        }
+
+        .clear-response-btn:hover {
+            background: rgba(239, 68, 68, 0.3);
+            border-color: rgba(239, 68, 68, 0.5);
+            transform: translateY(-1px);
+        }
+
+        .clear-response-btn:active {
+            transform: translateY(0);
+        }
+
+        .response-text {
+            line-height: 1.6;
+            font-size: 1rem;
+        }
+
+        .chatbot-examples {
+            margin-top: 20px;
+        }
+
+        .examples-title {
+            font-size: 0.9rem;
+            opacity: 0.8;
+            margin-bottom: 10px;
+        }
+
+        .example-questions {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+        }
+
+        .example-question {
+            background: rgba(255, 255, 255, 0.2);
+            padding: 8px 12px;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            border: 1px solid rgba(255, 255, 255, 0.3);
+        }
+
+        .example-question:hover {
+            background: rgba(255, 255, 255, 0.3);
+            transform: translateY(-1px);
+        }
+
+        .loading-dots {
+            display: inline-block;
+        }
+
+        .loading-dots::after {
+            content: '';
+            animation: dots 1.5s steps(4, end) infinite;
+        }
+
+        @keyframes dots {
+            0%, 20% { content: ''; }
+            40% { content: '.'; }
+            60% { content: '..'; }
+            80%, 100% { content: '...'; }
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Document Links Styles */
+        .document-links-container {
+            max-width: 100%;
+        }
+
+        .links-title {
+            color: #ffffff;
+            margin-bottom: 20px;
+            font-size: 1.1rem;
+            text-align: center;
+            padding: 10px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 8px;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .document-links-list {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        .document-link-card {
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 12px;
+            padding: 20px;
+            border: 2px solid rgba(44, 90, 160, 0.2);
+            transition: all 0.3s ease;
+            color: #333;
+        }
+
+        .document-link-card:hover {
+            border-color: rgba(44, 90, 160, 0.5);
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        .document-link-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 15px;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .document-title {
+            margin: 0;
+            flex: 1;
+        }
+
+        .document-link {
+            color: #2c5aa0;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1.1rem;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            transition: all 0.3s ease;
+            position: relative;
+        }
+
+        .document-link:hover {
+            color: #1e3a8a;
+            text-decoration: underline;
+            transform: translateX(5px);
+        }
+        
+        .document-link:active {
+            transform: scale(0.98);
+        }
+        
+        .document-link.navigating {
+            pointer-events: none;
+            opacity: 0.7;
+        }
+        
+        .document-link.navigating::after {
+            content: '⏳';
+            margin-left: 8px;
+        }
+
+        .relevance-badge {
+            background: linear-gradient(135deg, #10b981, #059669);
+            color: white;
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            white-space: nowrap;
+        }
+
+        .document-questions {
+            border-top: 1px solid #e5e7eb;
+            padding-top: 15px;
+        }
+
+        .related-question {
+            margin-bottom: 12px;
+            padding: 12px;
+            background: #f8fafc;
+            border-radius: 8px;
+            border-left: 3px solid #2c5aa0;
+        }
+
+        .related-question strong {
+            color: #2c5aa0;
+            display: block;
+            margin-bottom: 6px;
+            font-size: 0.95rem;
+        }
+
+        .question-preview {
+            color: #666;
+            font-size: 0.9rem;
+            line-height: 1.4;
+            margin: 0;
+        }
+
+        .more-questions {
+            color: #666;
+            font-style: italic;
+            font-size: 0.85rem;
+            margin: 10px 0 0 0;
+            text-align: center;
+        }
+
+        /* Mobile responsive for document links */
+        @media (max-width: 768px) {
+            .document-link-header {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+            
+            .relevance-badge {
+                align-self: flex-end;
+            }
+            
+            .document-link {
+                font-size: 1rem;
+            }
+            
+            .related-question {
+                padding: 10px;
+            }
+        }
+
+        /* Standalone mode styles for PWA */
+        @media (display-mode: standalone) {
+            .pwa-install-banner {
+                display: none !important;
+            }
+            
+            body {
+                user-select: none;
+                -webkit-user-select: none;
+                -webkit-touch-callout: none;
+            }
+            
+            /* Add status bar padding for iOS */
+            .main-content {
+                padding-top: calc(40px + env(safe-area-inset-top));
+            }
+            
+            @media (max-width: 768px) {
+                .main-content {
+                    margin-top: calc(60px + env(safe-area-inset-top));
+                }
+            }
+        }
+
+        /* PWA Install Banner Styles */
+        .pwa-install-banner {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            background: linear-gradient(135deg, #2c5aa0, #1e3a8a);
+            color: white;
+            padding: 12px 16px;
+            z-index: 2000;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+            animation: slideDown 0.3s ease;
+        }
+
+        .install-banner-content {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            max-width: 1200px;
+            margin: 0 auto;
+            gap: 15px;
+        }
+
+        .install-banner-text {
+            display: flex;
+            flex-direction: column;
+            gap: 4px;
+        }
+
+        .install-banner-text strong {
+            font-size: 1rem;
+        }
+
+        .install-banner-text span {
+            font-size: 0.85rem;
+            opacity: 0.9;
+        }
+
+        .install-banner-actions {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .install-btn {
+            background: rgba(255, 255, 255, 0.2);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            color: white;
+            padding: 8px 16px;
+            border-radius: 20px;
+            cursor: pointer;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            white-space: nowrap;
+        }
+
+        .install-btn:hover {
+            background: rgba(255, 255, 255, 0.3);
+            transform: translateY(-1px);
+        }
+
+        /* PWA Loading Screen */
+        .pwa-loading-screen {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            z-index: 9999;
+            color: white;
+            transition: opacity 0.3s ease;
+        }
+
+        .pwa-loading-spinner {
+            width: 50px;
+            height: 50px;
+            border: 4px solid rgba(255, 255, 255, 0.3);
+            border-top: 4px solid white;
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+            margin-bottom: 20px;
+        }
+
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        /* Safe area handling for PWA */
+        .sidebar {
+            padding-top: env(safe-area-inset-top);
+        }
+
+        .mobile-menu-toggle {
+            top: calc(15px + env(safe-area-inset-top));
+        }
+
+        @media (max-width: 768px) {
+            .mobile-menu-toggle {
+                top: calc(10px + env(safe-area-inset-top));
+            }
+        }
+
+        /* About section styles */
+        .about-content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .version-card {
+            background: linear-gradient(135deg, #10b981 0%, #059669 100%);
+            color: white;
+            padding: 25px;
+            border-radius: 15px;
+            margin-bottom: 30px;
+            text-align: center;
+        }
+
+        .version-card h2 {
+            margin: 0 0 10px 0;
+            font-size: 1.8rem;
+        }
+
+        .version-info {
+            display: flex;
+            justify-content: space-around;
+            margin-top: 15px;
+            flex-wrap: wrap;
+            gap: 15px;
+        }
+
+        .version-detail {
+            background: rgba(255, 255, 255, 0.2);
+            padding: 10px 15px;
+            border-radius: 8px;
+            min-width: 120px;
+        }
+
+        .version-detail strong {
+            display: block;
+            font-size: 0.9rem;
+            opacity: 0.8;
+        }
+
+        .version-detail span {
+            font-size: 1.1rem;
+            font-weight: 600;
+        }
+
+        .disclaimer-card {
+            background: linear-gradient(135deg, #f59e0b 0%, #d97706 100%);
+            color: white;
+            padding: 25px;
+            border-radius: 15px;
+            margin-bottom: 20px;
+        }
+
+        .disclaimer-card h3 {
+            margin: 0 0 15px 0;
+            font-size: 1.3rem;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .disclaimer-card p {
+            line-height: 1.6;
+            margin-bottom: 10px;
+            font-size: 1rem;
+        }
+
+        /* Mobile responsive for about section */
+        @media (max-width: 768px) {
+            .version-info {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .version-detail {
+                text-align: center;
+                min-width: auto;
+                width: 100%;
+            }
+        }
+        @media (max-width: 768px) {
+            .ai-chatbot-container {
+                padding: 20px;
+                margin: 20px 0;
+            }
+            
+            .chatbot-input-container {
+                flex-direction: column;
+            }
+            
+            .example-questions {
+                flex-direction: column;
+            }
+            
+            .example-question {
+                text-align: center;
+            }
+        }        .content-card p {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            margin-bottom: 15px;
+        }
+
+        .highlight-box {
+            background: linear-gradient(135deg, #667eea20, #764ba220);
+            border-left: 4px solid #2c5aa0;
+            padding: 20px;
+            border-radius: 8px;
+            margin: 20px 0;
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            margin: 30px 0;
+        }
+
+        .service-item {
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            text-align: center;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+        }
+
+        .service-item:hover {
+            transform: translateY(-5px);
+        }
+
+        .service-item .icon {
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+        }
+
+        .service-item h3 {
+            color: #2c5aa0;
+            margin-bottom: 10px;
+        }
+
+        /* Footer Styles */
+        .footer {
+            background: #2c5aa0;
+            color: white;
+            padding: 30px;
+            margin-top: 50px;
+            border-radius: 15px;
+        }
+
+        .footer h3 {
+            margin-bottom: 15px;
+            color: #fff;
+        }
+
+        .footer p {
+            line-height: 1.6;
+            margin-bottom: 10px;
+        }
+
+        /* Mobile Menu Toggle Button */
+        .mobile-menu-toggle {
+            display: none;
+            position: fixed;
+            top: 15px;
+            left: 15px;
+            z-index: 1002;
+            background: linear-gradient(135deg, #2c5aa0 0%, #1e3a8a 100%);
+            color: white;
+            border: none;
+            padding: 12px 15px;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 18px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+            transition: all 0.3s ease;
+        }
+
+        .mobile-menu-toggle:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(0,0,0,0.3);
+        }
+
+        .mobile-menu-toggle:active {
+            transform: translateY(0);
+        }
+
+        /* Tablet Responsive */
+        @media (max-width: 1024px) {
+            .sidebar {
+                width: 260px;
+            }
+            
+            .main-content {
+                margin-left: 260px;
+                padding: 30px;
+            }
+        }
+
+        /* Mobile Responsive */
+        @media (max-width: 768px) {
+            .container {
+                flex-direction: column;
+            }
+            
+            .sidebar {
+                width: 85%;
+                max-width: 320px;
+                position: fixed;
+                top: 0;
+                left: 0;
+                height: 100vh;
+                transform: translateX(-100%);
+                z-index: 1001;
+                transition: transform 0.3s ease;
+                box-shadow: 2px 0 20px rgba(0,0,0,0.3);
+                overflow-y: auto;
+                -webkit-overflow-scrolling: touch; /* Smooth scrolling on iOS */
+            }
+
+            .sidebar.open {
+                transform: translateX(0);
+            }
+
+            /* Ensure sidebar menu has proper scrolling */
+            .sidebar-menu {
+                padding: 20px 0 60px 0; /* Added bottom padding for mobile accessibility */
+                height: calc(100vh - 200px); /* Account for header and search */
+                overflow-y: auto;
+                -webkit-overflow-scrolling: touch;
+                scroll-behavior: smooth; /* Smooth scrolling */
+            }
+
+            /* Fix nested submenu positioning and scrolling on mobile */
+            .nested-submenu {
+                max-height: none !important; /* Remove height restriction */
+                position: static !important; /* Don't use absolute positioning */
+                overflow: visible !important; /* Ensure content is visible */
+            }
+
+            .nested-submenu.expanded {
+                max-height: none !important; /* Allow full expansion */
+                opacity: 1;
+                animation: none !important; /* Disable animation on mobile for better performance */
+            }
+
+            /* Ensure submenu items are accessible */
+            .submenu {
+                max-height: none !important;
+            }
+
+            /* Improve touch targets for mobile */
+            .submenu-header,
+            .nested-submenu-header {
+                min-height: 44px; /* iOS recommended touch target */
+                display: flex;
+                align-items: center;
+            }
+
+            .submenu-item,
+            .nested-submenu-item-link {
+                min-height: 40px;
+                display: flex;
+                align-items: center;
+            }
+
+            /* Fix submenu scrolling on mobile */
+            .submenu {
+                max-height: none !important; /* Remove height restriction on mobile */
+            }
+
+            /* Ensure smooth scrolling for all scrollable elements */
+            .sidebar,
+            .sidebar-menu {
+                scroll-behavior: smooth;
+            }
+
+            .main-content {
+                margin-left: 0;
+                margin-top: 60px;
+                padding: 20px 15px;
+                width: 100%;
+            }
+
+            .hero-section {
+                padding: 30px 20px;
+                text-align: center;
+            }
+
+            .hero-section h1 {
+                font-size: 2.2rem;
+                margin-bottom: 15px;
+            }
+
+            .hero-section .subtitle {
+                font-size: 1.1rem;
+            }
+
+            .content-card {
+                padding: 25px 20px;
+                margin-bottom: 20px;
+            }
+
+            .services-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 15px;
+            }
+
+            .service-item {
+                padding: 20px 15px;
+            }
+
+            .service-item .icon {
+                font-size: 2rem;
+                margin-bottom: 10px;
+            }
+
+            .service-item h3 {
+                font-size: 1.1rem;
+                margin-bottom: 8px;
+            }
+
+            .service-item p {
+                font-size: 0.9rem;
+            }
+
+            .mobile-menu-toggle {
+                display: block;
+            }
+
+            .footer {
+                padding: 25px 20px;
+                font-size: 0.9rem;
+            }
+        }
+
+        /* Small Mobile Responsive */
+        @media (max-width: 480px) {
+            .sidebar {
+                width: 90%;
+            }
+
+            .main-content {
+                margin-top: 50px;
+                padding: 15px 10px;
+            }
+
+            .hero-section h1 {
+                font-size: 1.8rem;
+            }
+
+            .hero-section .subtitle {
+                font-size: 1rem;
+            }
+
+            .content-card {
+                padding: 20px 15px;
+            }
+
+            .services-grid {
+                grid-template-columns: 1fr;
+                gap: 12px;
+            }
+
+            .service-item {
+                padding: 15px;
+            }
+
+            .mobile-menu-toggle {
+                top: 10px;
+                left: 10px;
+                padding: 10px 12px;
+                font-size: 16px;
+            }
+        }
+
+        .sidebar-overlay {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.6);
+            z-index: 1000;
+            transition: opacity 0.3s ease;
+            opacity: 0;
+        }
+
+        .sidebar-overlay.active {
+            display: block;
+            opacity: 1;
+        }
+
+        /* Back to home button */
+        #back-to-home button {
+            background: linear-gradient(135deg, #2c5aa0 0%, #1e3a8a 100%);
+            color: white;
+            border: none;
+            padding: 12px 24px;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 14px;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        #back-to-home button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(44, 90, 160, 0.3);
+        }
+
+        #back-to-home button:active {
+            transform: translateY(0);
+        }
+
+        /* Document content area */
+        #document-content {
+            padding: 20px;
+            height: calc(100vh - 40px);
+            overflow: hidden;
+        }
+
+        @media (max-width: 768px) {
+            #document-content {
+                padding: 15px 10px;
+                height: calc(100vh - 30px);
+            }
+
+            #back-to-home button {
+                padding: 10px 20px;
+                font-size: 13px;
+            }
+
+            #document-frame {
+                height: calc(100vh - 80px) !important;
+            }
+        }
+    </style>
+</head>
+<body>
+    <button class="mobile-menu-toggle" onclick="toggleSidebar()">☰</button>
+    <div class="sidebar-overlay" id="sidebar-overlay" onclick="closeSidebar()"></div>
+    
+    <div class="container">
+        <div class="sidebar" id="sidebar">
+            <div class="sidebar-header" onclick="showHomepage(); closeSidebar();" title="Back to Home">
+                <h2>📚 Margdarshak FAQ</h2>
+            </div>
+            
+            <div class="sidebar-menu" id="sidebar-menu">
+                <!-- Menu items will be populated by JavaScript -->
+            </div>
+        </div>
+
+        <div class="main-content">
+            <div id="homepage-content">
+                <div class="hero-section">
+                    <h1>🎓 Margdarshak FAQ</h1>
+                    <p class="subtitle">Pro-bono Guidance for 12th Grade Parents</p>
+                </div>
+
+                <!-- AI Chatbot Widget -->
+                <div class="ai-chatbot-container">
+                    <div class="chatbot-header">
+                        <div class="chatbot-title">
+                            🤖 Ask AI Assistant
+                        </div>
+                        <div class="chatbot-status" id="chatbot-status">Ready</div>
+                    </div>
+                    
+                    <div class="chatbot-input-container">
+                        <input 
+                            type="text" 
+                            class="chatbot-input" 
+                            id="chatbot-input" 
+                            placeholder="Ask any question about admissions, eligibility, exams, counseling..."
+                            maxlength="500"
+                        />
+                        <button class="chatbot-send-btn" id="chatbot-send">
+                            <span>Ask</span>
+                            <span>🚀</span>
+                        </button>
+                    </div>
+
+                    <div class="chatbot-response" id="chatbot-response">
+                        <div class="response-header">
+                            <span>AI Assistant Response</span>
+                            <div class="response-actions">
+                                <span id="response-confidence"></span>
+                                <button class="clear-response-btn" id="clear-response" title="Clear search results">
+                                    <span>✕</span>
+                                </button>
+                            </div>
+                        </div>
+                        <div class="response-text" id="response-text"></div>
+                    </div>
+
+                    <div class="chatbot-examples">
+                        <div class="examples-title">💡 Try asking:</div>
+                        <div class="example-questions">
+                            <span class="example-question" data-question="What is KCET?">What is KCET?</span>
+                            <span class="example-question" data-question="KCET eligibility criteria">KCET eligibility criteria</span>
+                            <span class="example-question" data-question="How to apply for JEE?">How to apply for JEE?</span>
+                            <span class="example-question" data-question="ComedK vs KCET difference">ComedK vs KCET difference</span>
+                            <span class="example-question" data-question="PES University admission process">PES University admission process</span>
+                            <span class="example-question" data-question="Medical college admission requirements">Medical college admission requirements</span>
+                            <span class="example-question" data-question="IISER admission through IAT">IISER admission through IAT</span>
+                            <span class="example-question" data-question="IISC Bangalore research programs">IISC Bangalore research programs</span>
+                            <span class="example-question" data-question="Pure science career opportunities">Pure science career opportunities</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="content-section">
+                    <div class="content-card">
+                        <h2>Welcome to Margdarshak FAQ</h2>
+                        <p>Your comprehensive guide for 12th-grade educational decisions. Access expert guidance, detailed FAQs, and data-driven insights to navigate admissions in Engineering, Medical, and Science fields.</p>
+                        
+                        <div class="highlight-box">
+                            <p><strong>🎯 Quick Start:</strong> Use the AI assistant above to ask questions, or browse the menu on the left for detailed FAQ sections and analysis reports.</p>
+                        </div>
+                    </div>
+
+                    <div class="content-card">
+                        <h2>What's Available</h2>
+                        <div class="services-grid">
+                            <div class="service-item">
+                                <div class="icon">❓</div>
+                                <h3>FAQ Sections</h3>
+                                <p>Detailed guidance for JEE, KCET, ComedK, Medical, and more</p>
+                            </div>
+                            <div class="service-item">
+                                <div class="icon">�</div>
+                                <h3>Data Analytics</h3>
+                                <p>Marks vs Rank analysis and admission statistics</p>
+                            </div>
+                            <div class="service-item">
+                                <div class="icon">�</div>
+                                <h3>College Guides</h3>
+                                <p>BITS, VIT, PES, and institution-specific information</p>
+                            </div>
+                            <div class="service-item">
+                                <div class="icon">🔬</div>
+                                <h3>Science Careers</h3>
+                                <p>Pure science, research, and IISER guidance</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="content-card">
+                        <h2>Getting Started</h2>
+                        <p>Choose from these quick access options:</p>
+                        <ul style="margin-left: 20px; margin-top: 15px;">
+                            <li style="margin-bottom: 10px;">🤖 <strong>Ask AI:</strong> Use the assistant above for instant answers</li>
+                            <li style="margin-bottom: 10px;">� <strong>Install App:</strong> Add to home screen for offline access</li>
+                            <li style="margin-bottom: 10px;">📋 <strong>Browse Menu:</strong> Explore organized FAQ sections</li>
+                            <li style="margin-bottom: 10px;">📊 <strong>View Analytics:</strong> Check latest admission data</li>
+                            <li style="margin-bottom: 10px;">ℹ️ <strong>About:</strong> Learn more about Margdarshak and disclaimers</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- About Page Content -->
+            <div id="about-content" style="display: none;">
+                <div class="about-content">
+                    <div class="version-card">
+                        <h2>📱 Margdarshak FAQ PWA</h2>
+                        <p>Progressive Web App for Educational Guidance</p>
+                        <div class="version-info">
+                            <div class="version-detail">
+                                <strong>Version</strong>
+                                <span>2.0.0</span>
+                            </div>
+                            <div class="version-detail">
+                                <strong>Platform</strong>
+                                <span>PWA</span>
+                            </div>
+                            <div class="version-detail">
+                                <strong>Updated</strong>
+                                <span>2025</span>
+                            </div>
+                            <div class="version-detail">
+                                <strong>Status</strong>
+                                <span>Active</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="content-card">
+                        <h2>About Margdarshak</h2>
+                        <p>Margdarshak is a pro-bono service for parents whose children are in 12th grade.</p>
+                        <p>We have been providing this service over the last 10 years. Our focus is primarily to support parents whose children are primarily interested in Science, Technology, Design (incl. Architecture), and Medical institution admissions in India.</p>
+                        
+                        <div class="highlight-box">
+                            <p><strong>Our forum operates through WhatsApp group(s). It's a closed group restricted to only registered and approved parents.</strong></p>
+                        </div>
+                    </div>
+
+                    <div class="content-card">
+                        <h2>Our Focus Areas</h2>
+                        <div class="services-grid">
+                            <div class="service-item">
+                                <div class="icon">🔬</div>
+                                <h3>Science</h3>
+                                <p>Engineering and Pure Sciences</p>
+                            </div>
+                            <div class="service-item">
+                                <div class="icon">💻</div>
+                                <h3>Technology</h3>
+                                <p>IT, Computer Science, and Tech</p>
+                            </div>
+                            <div class="service-item">
+                                <div class="icon">🎨</div>
+                                <h3>Design</h3>
+                                <p>Including Architecture</p>
+                            </div>
+                            <div class="service-item">
+                                <div class="icon">🏥</div>
+                                <h3>Medical</h3>
+                                <p>Medical Institution Admissions</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="content-card">
+                        <h2>How We Help</h2>
+                        <p>Through our comprehensive knowledge vault, we provide:</p>
+                        <ul style="margin-left: 20px; margin-top: 15px;">
+                            <li style="margin-bottom: 10px;">📋 Detailed FAQ sections for various entrance exams</li>
+                            <li style="margin-bottom: 10px;">📊 Data analysis and insights from previous years</li>
+                            <li style="margin-bottom: 10px;">🎯 Strategic guidance for exam preparation</li>
+                            <li style="margin-bottom: 10px;">🏫 College and institution information</li>
+                            <li style="margin-bottom: 10px;">💡 Expert advice from experienced parents</li>
+                        </ul>
+                    </div>
+
+                    <div class="disclaimer-card">
+                        <h3>⚠️ Important Disclaimers</h3>
+                        <p>The information provided in this vault is for general guidance purposes only. While we strive to provide accurate and up-to-date information, admission processes, eligibility criteria, and other details may change over time.</p>
+                        <p>We strongly recommend that parents and students verify all information directly with the respective institutions and official sources before making any decisions.</p>
+                        <p>Margdarshak and its volunteers are not responsible for any decisions made based on the information provided here. This is a pro-bono service provided by volunteers who are sharing their experiences and knowledge to help other parents.</p>
+                    </div>
+
+                    <div class="content-card">
+                        <h2>PWA Features</h2>
+                        <p>This Progressive Web App (PWA) offers enhanced features:</p>
+                        <ul style="margin-left: 20px; margin-top: 15px;">
+                            <li style="margin-bottom: 10px;">📱 Install on your device for app-like experience</li>
+                            <li style="margin-bottom: 10px;">🔄 Offline access to frequently viewed documents</li>
+                            <li style="margin-bottom: 10px;">⚡ Fast loading and smooth navigation</li>
+                            <li style="margin-bottom: 10px;">🔍 Smart search with AI-powered suggestions</li>
+                            <li style="margin-bottom: 10px;">📲 Works on all devices - mobile, tablet, desktop</li>
+                            <li style="margin-bottom: 10px;">🔐 Secure and privacy-focused</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Container for loaded documents -->
+            <div id="document-content" style="display: none;">
+                <div id="back-to-home" style="margin-bottom: 20px;">
+                    <button onclick="showHomepage()" style="background: linear-gradient(135deg, #2c5aa0 0%, #1e3a8a 100%); color: white; border: none; padding: 10px 20px; border-radius: 5px; cursor: pointer; font-size: 14px;">
+                        ← Back to Home
+                    </button>
+                </div>
+                <iframe id="document-frame" style="width: 100%; height: calc(100vh - 100px); border: none; border-radius: 10px; box-shadow: 0 4px 20px rgba(0,0,0,0.1);"></iframe>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Navigation data structure
+        const DOCUMENTS = [
+            {
+                title: 'General',
+                hasSubmenu: true,
+                submenu: [
+                    { title: 'General FAQ', file: 'documents/Margdarshak FAQ - General.html' },
+                    { title: 'Operational FAQ', file: 'documents/Operational FAQ.html' }
+                ]
+            },
+            {
+                title: 'Engineering',
+                hasSubmenu: true,
+                submenu: [
+                    { title: 'BITS Guide', file: 'documents/BITS.html' },
+                    { title: 'ComedK FAQ', file: 'documents/Margdarshak FAQ - ComedK.html' },
+                    { title: 'JEE FAQ', file: 'documents/Margdarshak FAQ - JEE.html' },
+                    { title: 'JEE - Tips from Parents', file: 'documents/JEE - Tips from Parents.html' },
+                    { title: 'KCET FAQ', file: 'documents/Margdarshak FAQ - KCET.html' },
+                    { title: 'PESU FAQ', file: 'documents/Margdarshak FAQ - PESU.html' },
+                    { title: 'VIT Guide', file: 'documents/VIT.html' }
+                ]
+            },
+            {
+                title: 'Medical',
+                hasSubmenu: true,
+                submenu: [
+                    { title: 'Medical FAQ', file: 'documents/Medical.html' }
+                ]
+            },
+            {
+                title: 'Pure Science and Maths',
+                hasSubmenu: true,
+                submenu: [
+                    { title: 'Science and Mathematics FAQ', file: 'documents/Science and Mathematics.html' }
+                ]
+            },
+            {
+                title: 'Data Analytics',
+                hasSubmenu: true,
+                submenu: [
+                    {
+                        title: '2025',
+                        hasNestedSubmenu: true,
+                        nestedSubmenu: [
+                            { title: 'ComedK - Marks vs Rank Analysis', file: 'documents/ComedK - Marks vs Rank Analysis.html' },
+                            { title: 'JEE - Percentile vs Rank Analysis', file: 'documents/JEE - Percentile vs Rank Analysis.html' },
+                            { title: 'KCET 2025 Analytics', file: 'documents/KCET 2025 Analytics.html' },
+                            { title: 'PES - Counseling Analysis', file: 'documents/PES - JOSAA Counseling Analysis.html' }
+                        ]
+                    }
+                ]
+            },
+            {
+                title: 'About',
+                hasSubmenu: false,
+                isSpecial: true,
+                action: 'showAbout'
+            }
+        ];
+
+        const docIcons = {
+            'General': '📖',
+            'Engineering': '⚙️',
+            'Medical': '🏥',
+            'Pure Science and Maths': '🔬',
+            'Data Analytics': '📊',
+            'About': 'ℹ️'
+        };
+
+        function loadDocuments() {
+            const sidebarMenu = document.getElementById('sidebar-menu');
+            sidebarMenu.innerHTML = '';
+
+            DOCUMENTS.forEach(doc => {
+                if (doc.hasSubmenu) {
+                    // Create main menu item with submenu
+                    const menuMain = document.createElement('div');
+                    menuMain.className = 'menu-item has-submenu';
+                    
+                    const menuHeader = document.createElement('div');
+                    menuHeader.className = 'submenu-header';
+                    menuHeader.innerHTML = `
+                        <span>${docIcons[doc.title] || '📄'} ${doc.title}</span>
+                        <span class="submenu-arrow">▶</span>
+                    `;
+                    
+                    const submenu = document.createElement('div');
+                    submenu.className = 'submenu';
+                    
+                    // Add submenu items
+                    doc.submenu.forEach(item => {
+                        if (item.hasNestedSubmenu) {
+                            // Create nested submenu
+                            const nestedMenuMain = document.createElement('div');
+                            nestedMenuMain.className = 'nested-submenu-item';
+                            
+                            const nestedMenuHeader = document.createElement('div');
+                            nestedMenuHeader.className = 'nested-submenu-header';
+                            nestedMenuHeader.innerHTML = `
+                                <span>📊 ${item.title}</span>
+                                <span class="nested-submenu-arrow">▶</span>
+                            `;
+                            
+                            const nestedSubmenu = document.createElement('div');
+                            nestedSubmenu.className = 'nested-submenu';
+                            
+                            // Add nested submenu items
+                            item.nestedSubmenu.forEach(nestedItem => {
+                                const nestedSubmenuItem = document.createElement('a');
+                                const filePath = nestedItem.file.startsWith('../') || nestedItem.file.startsWith('data/') || nestedItem.file.startsWith('documents/') ? nestedItem.file : `documents/${nestedItem.file}`;
+                                nestedSubmenuItem.href = "#";
+                                nestedSubmenuItem.className = nestedItem.file === '#' ? 'nested-submenu-item-link coming-soon' : 'nested-submenu-item-link';
+                                nestedSubmenuItem.innerHTML = `📊 ${nestedItem.title}`;
+                                
+                                // Add click handler for same-tab navigation
+                                nestedSubmenuItem.addEventListener('click', function(e) {
+                                    e.preventDefault();
+                                    if (nestedItem.file !== '#') {
+                                        loadDocument(filePath);
+                                        closeSidebar(); // Close sidebar after selecting item
+                                    }
+                                    // Do nothing for placeholder items with '#'
+                                });
+                                
+                                nestedSubmenu.appendChild(nestedSubmenuItem);
+                            });
+                            
+                            // Add click handler for nested submenu toggle
+                            nestedMenuHeader.onclick = function(e) {
+                                e.preventDefault();
+                                e.stopPropagation();
+                                
+                                const arrow = this.querySelector('.nested-submenu-arrow');
+                                const nestedSubmenuDiv = this.parentElement.querySelector('.nested-submenu');
+                                
+                                if (nestedSubmenuDiv.classList.contains('expanded')) {
+                                    nestedSubmenuDiv.classList.remove('expanded');
+                                    arrow.classList.remove('expanded');
+                                } else {
+                                    // Close other nested submenus in the same parent
+                                    const parentSubmenu = this.closest('.submenu');
+                                    parentSubmenu.querySelectorAll('.nested-submenu.expanded').forEach(s => {
+                                        s.classList.remove('expanded');
+                                    });
+                                    parentSubmenu.querySelectorAll('.nested-submenu-arrow.expanded').forEach(a => {
+                                        a.classList.remove('expanded');
+                                    });
+                                    
+                                    nestedSubmenuDiv.classList.add('expanded');
+                                    arrow.classList.add('expanded');
+                                    
+                                    // Auto-scroll to make nested submenu visible on mobile
+                                    if (window.innerWidth <= 768) {
+                                        setTimeout(() => {
+                                            const sidebarMenu = document.getElementById('sidebar-menu');
+                                            const nestedSubmenuRect = nestedSubmenuDiv.getBoundingClientRect();
+                                            const sidebarRect = sidebarMenu.getBoundingClientRect();
+                                            
+                                            // Check if nested submenu extends below visible area
+                                            if (nestedSubmenuRect.bottom > sidebarRect.bottom) {
+                                                const scrollAmount = nestedSubmenuRect.bottom - sidebarRect.bottom + 40; // Extra padding
+                                                sidebarMenu.scrollBy({ top: scrollAmount, behavior: 'smooth' });
+                                            }
+                                            
+                                            // Also check if the nested submenu header is above visible area
+                                            if (nestedSubmenuRect.top < sidebarRect.top) {
+                                                const scrollAmount = nestedSubmenuRect.top - sidebarRect.top - 20; // Small offset from top
+                                                sidebarMenu.scrollBy({ top: scrollAmount, behavior: 'smooth' });
+                                            }
+                                        }, 200); // Increased delay to allow full expansion
+                                    }
+                                }
+                                
+                                return false;
+                            };
+                            
+                            nestedMenuMain.appendChild(nestedMenuHeader);
+                            nestedMenuMain.appendChild(nestedSubmenu);
+                            submenu.appendChild(nestedMenuMain);
+                        } else {
+                            // Regular submenu item
+                            const submenuItem = document.createElement('a');
+                            const filePath = item.file.startsWith('../') || item.file.startsWith('data/') || item.file.startsWith('documents/') ? item.file : `documents/${item.file}`;
+                            submenuItem.href = "#";
+                            submenuItem.className = item.file === '#' ? 'submenu-item coming-soon' : 'submenu-item';
+                            submenuItem.innerHTML = `📄 ${item.title}`;
+                            
+                            // Add click handler for same-tab navigation
+                            submenuItem.addEventListener('click', function(e) {
+                                e.preventDefault();
+                                if (item.file !== '#') {
+                                    loadDocument(filePath);
+                                    closeSidebar(); // Close sidebar after selecting item
+                                }
+                                // Do nothing for placeholder items with '#'
+                            });
+                            
+                            submenu.appendChild(submenuItem);
+                        }
+                    });
+                    
+                    // Add click handler for submenu toggle
+                    menuHeader.onclick = function(e) {
+                        e.preventDefault();
+                        e.stopPropagation();
+                        
+                        const arrow = this.querySelector('.submenu-arrow');
+                        const submenuDiv = this.parentElement.querySelector('.submenu');
+                        
+                        if (submenuDiv.classList.contains('expanded')) {
+                            submenuDiv.classList.remove('expanded');
+                            arrow.classList.remove('expanded');
+                        } else {
+                            // Close all other submenus
+                            document.querySelectorAll('.submenu.expanded').forEach(s => {
+                                s.classList.remove('expanded');
+                            });
+                            document.querySelectorAll('.submenu-arrow.expanded').forEach(a => {
+                                a.classList.remove('expanded');
+                            });
+                            
+                            submenuDiv.classList.add('expanded');
+                            arrow.classList.add('expanded');
+                            
+                            // Auto-scroll to ensure submenu is visible on mobile
+                            if (window.innerWidth <= 768) {
+                                setTimeout(() => {
+                                    const sidebarMenu = document.getElementById('sidebar-menu');
+                                    const submenuRect = submenuDiv.getBoundingClientRect();
+                                    const sidebarRect = sidebarMenu.getBoundingClientRect();
+                                    
+                                    // Check if submenu extends below visible area
+                                    if (submenuRect.bottom > sidebarRect.bottom) {
+                                        const scrollAmount = submenuRect.bottom - sidebarRect.bottom + 10;
+                                        sidebarMenu.scrollBy({ top: scrollAmount, behavior: 'smooth' });
+                                    }
+                                }, 150); // Delay to allow expansion animation
+                            }
+                        }
+                        
+                        // Don't close sidebar when expanding/collapsing submenus on mobile
+                        return false;
+                    };
+                    
+                    menuMain.appendChild(menuHeader);
+                    menuMain.appendChild(submenu);
+                    sidebarMenu.appendChild(menuMain);
+                } else {
+                    // Regular menu item
+                    const link = document.createElement('a');
+                    link.href = "#";
+                    link.className = 'menu-item';
+                    link.innerHTML = `${docIcons[doc.title] || '📄'} ${doc.title}`;
+                    
+                    // Add click handler for same-tab navigation
+                    link.addEventListener('click', function(e) {
+                        e.preventDefault();
+                        
+                        if (doc.isSpecial && doc.action) {
+                            // Handle special menu items like About
+                            if (doc.action === 'showAbout') {
+                                showAbout();
+                            }
+                        } else {
+                            // Regular document navigation
+                            const filePath = doc.file.startsWith('../') || doc.file.startsWith('data/') || doc.file.startsWith('documents/') ? doc.file : `documents/${doc.file}`;
+                            loadDocument(filePath);
+                        }
+                        closeSidebar(); // Close sidebar after selecting item
+                    });
+                    
+                    sidebarMenu.appendChild(link);
+                }
+            });
+        }
+
+        // Document loading functions
+        function loadDocument(filePath) {
+            const homepageContent = document.getElementById('homepage-content');
+            const aboutContent = document.getElementById('about-content');
+            const documentContent = document.getElementById('document-content');
+            const documentFrame = document.getElementById('document-frame');
+            
+            // Hide homepage and about, show document
+            homepageContent.style.display = 'none';
+            aboutContent.style.display = 'none';
+            documentContent.style.display = 'block';
+            
+            // Add error handling for iframe loading
+            documentFrame.onload = function() {
+                console.log('Document loaded successfully:', filePath);
+                console.log('Encoded URL:', encodeURI(filePath));
+            };
+            
+            // Load document in iframe with proper URL encoding and fallback
+            const encodedPath = encodeURI(filePath);
+            console.log('Attempting to load:', filePath);
+            console.log('Encoded as:', encodedPath);
+            
+            let attemptedFallback = false;
+            
+            const handleLoadError = function() {
+                if (!attemptedFallback) {
+                    console.warn('Encoded path failed, trying original path:', filePath);
+                    attemptedFallback = true;
+                    documentFrame.src = filePath; // Try original path as fallback
+                } else {
+                    console.error('Both encoded and original paths failed');
+                    // Show error message to user
+                    const errorMsg = document.createElement('div');
+                    errorMsg.style.cssText = 'padding: 20px; text-align: center; color: #dc2626; background: #fef2f2; border: 1px solid #fecaca; border-radius: 8px; margin: 20px;';
+                    errorMsg.innerHTML = `
+                        <h3>⚠️ Document Loading Error</h3>
+                        <p>Unable to load: <strong>${filePath}</strong></p>
+                        <p>Tried both encoded (${encodedPath}) and original paths</p>
+                        <p>This might be a temporary issue. Please try:</p>
+                        <ul style="text-align: left; display: inline-block;">
+                            <li>Refreshing the page</li>
+                            <li>Checking your internet connection</li>
+                            <li>Trying again in a few moments</li>
+                        </ul>
+                        <button onclick="showHomepage()" style="background: #dc2626; color: white; border: none; padding: 8px 16px; border-radius: 4px; cursor: pointer; margin-top: 10px;">← Back to Home</button>
+                    `;
+                    
+                    // Replace iframe content with error message
+                    documentContent.innerHTML = `
+                        <div id="back-to-home" style="margin-bottom: 20px;">
+                            <button onclick="showHomepage()" style="background: linear-gradient(135deg, #2c5aa0 0%, #1e3a8a 100%); color: white; border: none; padding: 10px 20px; border-radius: 5px; cursor: pointer; font-size: 14px;">
+                                ← Back to Home
+                            </button>
+                        </div>
+                        ${errorMsg.outerHTML}
+                    `;
+                }
+            };
+            
+            documentFrame.onerror = handleLoadError;
+            documentFrame.src = encodedPath;
+            
+            // Update page title
+            const fileName = filePath.split('/').pop().replace('.html', '');
+            document.title = `${fileName} - Margdarshak FAQ`;
+        }
+
+        function showHomepage() {
+            const homepageContent = document.getElementById('homepage-content');
+            const aboutContent = document.getElementById('about-content');
+            const documentContent = document.getElementById('document-content');
+            let documentFrame = document.getElementById('document-frame');
+            
+            // Show homepage and hide others
+            homepageContent.style.display = 'block';
+            aboutContent.style.display = 'none';
+            documentContent.style.display = 'none';
+            
+            // Reset document content structure if it was replaced with error message
+            if (!documentFrame) {
+                documentContent.innerHTML = `
+                    <div id="back-to-home" style="margin-bottom: 20px;">
+                        <button onclick="showHomepage()" style="background: linear-gradient(135deg, #2c5aa0 0%, #1e3a8a 100%); color: white; border: none; padding: 10px 20px; border-radius: 5px; cursor: pointer; font-size: 14px;">
+                            ← Back to Home
+                        </button>
+                    </div>
+                    <iframe id="document-frame" style="width: 100%; height: calc(100vh - 100px); border: none; border-radius: 10px; box-shadow: 0 4px 20px rgba(0,0,0,0.1);"></iframe>
+                `;
+                documentFrame = document.getElementById('document-frame');
+            }
+            
+            // Clear iframe
+            if (documentFrame) {
+                documentFrame.src = '';
+            }
+            
+            // Reset page title
+            document.title = 'Margdarshak FAQ - Pro-bono Guidance for 12th Grade Parents';
+        }
+
+        function showAbout() {
+            const homepageContent = document.getElementById('homepage-content');
+            const aboutContent = document.getElementById('about-content');
+            const documentContent = document.getElementById('document-content');
+            
+            // Show about and hide others
+            homepageContent.style.display = 'none';
+            aboutContent.style.display = 'block';
+            documentContent.style.display = 'none';
+            
+            // Update page title
+            document.title = 'About - Margdarshak FAQ';
+        }
+
+        // Mobile sidebar functions
+        function toggleSidebar() {
+            const sidebar = document.getElementById('sidebar');
+            const overlay = document.getElementById('sidebar-overlay');
+            
+            if (sidebar.classList.contains('open')) {
+                closeSidebar();
+            } else {
+                sidebar.classList.add('open');
+                overlay.classList.add('active');
+                // Prevent background scrolling when menu is open
+                document.body.classList.add('menu-open');
+            }
+        }
+
+        function closeSidebar() {
+            const sidebar = document.getElementById('sidebar');
+            const overlay = document.getElementById('sidebar-overlay');
+            
+            sidebar.classList.remove('open');
+            overlay.classList.remove('active');
+            // Restore background scrolling
+            document.body.classList.remove('menu-open');
+        }
+
+        // Close sidebar when clicking on menu links in mobile
+        function addMobileMenuHandlers() {
+            // This function is now handled by individual click handlers
+        }
+
+        // Handle window resize to ensure proper behavior
+        function handleWindowResize() {
+            if (window.innerWidth > 768) {
+                // Desktop view - ensure sidebar is visible and overlay is hidden
+                const sidebar = document.getElementById('sidebar');
+                const overlay = document.getElementById('sidebar-overlay');
+                sidebar.classList.remove('open');
+                overlay.classList.remove('active');
+                document.body.classList.remove('menu-open');
+            }
+        }
+
+        // Add event listeners
+        window.addEventListener('resize', handleWindowResize);
+        
+        // Close sidebar with Escape key
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape') {
+                closeSidebar();
+            }
+        });
+
+        // Prevent clicks inside sidebar from closing it
+        document.getElementById('sidebar').addEventListener('click', function(e) {
+            e.stopPropagation();
+        });
+
+        // Search functionality
+        let searchIndex = [];
+        let searchCache = new Map();
+        let documentContents = new Map();
+
+        // Create searchable content index from all documents
+        function createSearchIndex() {
+            searchIndex = [];
+            
+            // Helper function to extract searchable items from documents array
+            function extractFromDocuments(docs, category = '') {
+                docs.forEach(doc => {
+                    if (doc.hasSubmenu) {
+                        doc.submenu.forEach(item => {
+                            if (item.hasNestedSubmenu) {
+                                item.nestedSubmenu.forEach(nestedItem => {
+                                    if (nestedItem.file !== '#') {
+                                        searchIndex.push({
+                                            title: nestedItem.title,
+                                            file: nestedItem.file,
+                                            category: doc.title,
+                                            subcategory: item.title,
+                                            type: 'document'
+                                        });
+                                    }
+                                });
+                            } else if (item.file !== '#') {
+                                searchIndex.push({
+                                    title: item.title,
+                                    file: item.file,
+                                    category: doc.title,
+                                    subcategory: '',
+                                    type: 'document'
+                                });
+                            }
+                        });
+                    } else if (doc.file !== '#') {
+                        searchIndex.push({
+                            title: doc.title,
+                            file: doc.file,
+                            category: category,
+                            subcategory: '',
+                            type: 'document'
+                        });
+                    }
+                });
+            }
+
+            extractFromDocuments(DOCUMENTS);
+        }
+
+        // Load and cache document content for search
+        async function loadDocumentContent(file) {
+            if (documentContents.has(file)) {
+                return documentContents.get(file);
+            }
+
+            try {
+                // Handle different directory structures
+                let filePath;
+                if (file.startsWith('data/') || file.startsWith('documents/')) {
+                    // File already has directory prefix
+                    filePath = file;
+                } else {
+                    // Default to documents directory
+                    filePath = `documents/${file}`;
+                }
+                
+                const response = await fetch(encodeURI(filePath));
+                if (!response.ok) {
+                    throw new Error(`HTTP error! status: ${response.status}`);
+                }
+                const html = await response.text();
+                
+                // Extract text content from HTML
+                const parser = new DOMParser();
+                const doc = parser.parseFromString(html, 'text/html');
+                
+                // Remove script and style elements
+                const scripts = doc.querySelectorAll('script, style');
+                scripts.forEach(script => script.remove());
+                
+                // Get text content and clean it up
+                const textContent = doc.body ? doc.body.textContent || doc.body.innerText || '' : '';
+                const cleanContent = textContent
+                    .replace(/\s+/g, ' ')  // Replace multiple whitespaces with single space
+                    .replace(/\n+/g, ' ')  // Replace newlines with spaces
+                    .trim();
+                
+                documentContents.set(file, cleanContent);
+                return cleanContent;
+            } catch (error) {
+                console.error(`Error loading document ${file}:`, error);
+                return '';
+            }
+        }
+
+        // Enhanced search function with full-text search
+        async function performSearch(query) {
+            if (!query || query.length < 2) {
+                return [];
+            }
+
+            query = query.toLowerCase();
+            const results = [];
+
+            // Search through all indexed documents
+            for (const item of searchIndex) {
+                let score = 0;
+                let matchedText = '';
+                let excerpt = '';
+
+                // Title matching (highest priority)
+                if (item.title.toLowerCase().includes(query)) {
+                    score += 10;
+                    matchedText = item.title;
+                }
+
+                // Category matching
+                if (item.category.toLowerCase().includes(query)) {
+                    score += 5;
+                    if (!matchedText) matchedText = item.category;
+                }
+
+                // Subcategory matching
+                if (item.subcategory.toLowerCase().includes(query)) {
+                    score += 3;
+                    if (!matchedText) matchedText = item.subcategory;
+                }
+
+                // Load and search document content
+                try {
+                    const content = await loadDocumentContent(item.file);
+                    const contentLower = content.toLowerCase();
+                    
+                    if (contentLower.includes(query)) {
+                        score += 2; // Content match gets lower priority than title
+                        
+                        // Generate excerpt from content
+                        const queryIndex = contentLower.indexOf(query);
+                        if (queryIndex !== -1) {
+                            const start = Math.max(0, queryIndex - 100);
+                            const end = Math.min(content.length, queryIndex + 150);
+                            excerpt = content.substring(start, end);
+                            
+                            // Clean up excerpt
+                            if (start > 0) excerpt = '...' + excerpt;
+                            if (end < content.length) excerpt = excerpt + '...';
+                            
+                            if (!matchedText) matchedText = query;
+                        }
+                    }
+
+                    // Boost score for multiple occurrences
+                    const matches = (contentLower.match(new RegExp(query, 'g')) || []).length;
+                    if (matches > 1) {
+                        score += Math.min(matches - 1, 5); // Cap the boost
+                    }
+                } catch (error) {
+                    console.error(`Error searching in document ${item.file}:`, error);
+                }
+
+                // Special matching for Science and Mathematics document
+                if (item.file.includes('Science and Mathematics.html')) {
+                    const scienceKeywords = [
+                        // Basic Science Keywords
+                        'science', 'mathematics', 'physics', 'chemistry', 'biology', 'math', 'maths', 'pure science', 'research', 'career', 'academic',
+                        // Premier Science Institutions
+                        'iiser', 'indian institute of science education and research', 'iisc', 'indian institute of science', 'bangalore',
+                        'niser', 'national institute of science education and research', 'bhubaneswar',
+                        'iat', 'institute for advancing technology', 'pune',
+                        'tifr', 'tata institute of fundamental research', 'mumbai',
+                        'isi', 'indian statistical institute', 'kolkata',
+                        'hri', 'harish chandra research institute', 'allahabad',
+                        'imsc', 'institute of mathematical sciences', 'chennai',
+                        'ncbs', 'national centre for biological sciences',
+                        'iucaa', 'inter university centre for astronomy and astrophysics',
+                        // Science Fields
+                        'theoretical physics', 'applied physics', 'astrophysics', 'particle physics', 'condensed matter',
+                        'organic chemistry', 'inorganic chemistry', 'physical chemistry', 'analytical chemistry',
+                        'molecular biology', 'biotechnology', 'biochemistry', 'microbiology', 'genetics', 'bioinformatics',
+                        'pure mathematics', 'applied mathematics', 'statistics', 'computational mathematics',
+                        'data science', 'computational biology', 'biophysics', 'chemical biology',
+                        // Career Paths
+                        'phd', 'doctorate', 'postdoc', 'scientist', 'researcher', 'professor', 'academia',
+                        'kvpy', 'kishore vaigyanik protsahan yojana', 'inspire', 'jrf', 'csir', 'ugc',
+                        'gate life sciences', 'jam', 'joint admission test', 'nest', 'national entrance screening test',
+                        // Research Areas
+                        'fundamental research', 'basic research', 'theoretical research', 'experimental research',
+                        'interdisciplinary', 'computational science', 'materials science', 'environmental science'
+                    ];
+                    if (scienceKeywords.some(keyword => query.includes(keyword))) {
+                        score += 10; // Very high priority for science queries
+                        if (!matchedText) matchedText = 'Science and Mathematics Career Guidance - IISER, IISC, NISER, Research Careers';
+                    }
+                }
+
+                // Special matching for Data Analytics documents
+                if (item.file.includes('Analysis.html') || item.file.includes('Marks vs Rank')) {
+                    const analyticsKeywords = ['data', 'analytics', 'analysis', 'marks', 'rank', 'statistics', 'trends'];
+                    if (analyticsKeywords.some(keyword => query.includes(keyword))) {
+                        score += 6; // High priority for analytics queries
+                        if (!matchedText) matchedText = 'Data Analysis and Statistics';
+                    }
+                }
+
+                // Keyword matching for common terms
+                const keywords = {
+                    'jee': ['jee', 'joint entrance', 'engineering entrance', 'jee main', 'jee advanced', 'mains', 'advanced'],
+                    'kcet': ['kcet', 'karnataka', 'cet', 'comedk', 'karnataka cet', 'kea'],
+                    'comedk': ['comedk', 'consortium', 'medical dental', 'karnataka private'],
+                    'pesu': ['pesu', 'pes university', 'pes', 'ring road', 'electronic city'],
+                    'neet': ['neet', 'medical', 'mbbs', 'bds', 'medical entrance', 'aiims', 'jipmer'],
+                    'bits': ['bits', 'birla', 'pilani', 'bitsat', 'goa', 'hyderabad', 'dubai'],
+                    'vit': ['vit', 'vellore', 'viteee', 'chennai', 'bhopal', 'amaravati'],
+                    'rank': ['rank', 'ranking', 'position', 'merit', 'all india rank', 'air', 'state rank'],
+                    'percentile': ['percentile', 'score', 'marks', 'normalized', 'raw score'],
+                    'cutoff': ['cutoff', 'cut off', 'minimum', 'closing rank', 'last rank', 'threshold'],
+                    'counseling': ['counseling', 'counselling', 'admission', 'seat allocation', 'josaa', 'csab'],
+                    'placement': ['placement', 'job', 'salary', 'package', 'internship', 'career prospects', 'companies'],
+                    'fee': ['fee', 'cost', 'expense', 'tuition', 'scholarship', 'financial aid', 'loan'],
+                    'hostel': ['hostel', 'accommodation', 'campus life', 'mess', 'dormitory', 'residence'],
+                    'tips': ['tips', 'advice', 'suggestions', 'guidance', 'strategy', 'preparation', 'study plan'],
+                    
+                    // Enhanced Science and Mathematics keywords
+                    'science': [
+                        'science', 'pure science', 'basic science', 'fundamental science', 'natural science',
+                        'iiser', 'iisc', 'niser', 'iat', 'tifr', 'isi', 'hri', 'imsc', 'ncbs', 'iucaa',
+                        'indian institute of science', 'bangalore', 'bhubaneswar', 'pune', 'mumbai', 'kolkata',
+                        'theoretical', 'experimental', 'computational', 'interdisciplinary'
+                    ],
+                    'mathematics': [
+                        'mathematics', 'math', 'maths', 'statistics', 'pure math', 'applied mathematics',
+                        'computational mathematics', 'mathematical sciences', 'actuarial', 'operational research'
+                    ],
+                    'physics': [
+                        'physics', 'theoretical physics', 'applied physics', 'astrophysics', 'particle physics',
+                        'condensed matter', 'quantum', 'nuclear physics', 'optics', 'plasma physics'
+                    ],
+                    'chemistry': [
+                        'chemistry', 'organic chemistry', 'inorganic chemistry', 'physical chemistry',
+                        'analytical chemistry', 'medicinal chemistry', 'materials chemistry', 'catalysis'
+                    ],
+                    'biology': [
+                        'biology', 'life sciences', 'biotechnology', 'biochemistry', 'microbiology',
+                        'genetics', 'bioinformatics', 'molecular biology', 'cell biology', 'ecology',
+                        'biophysics', 'structural biology', 'synthetic biology'
+                    ],
+                    'research': [
+                        'research', 'phd', 'doctorate', 'academic', 'scientist', 'professor', 'postdoc',
+                        'kvpy', 'inspire', 'jrf', 'csir', 'ugc', 'dst', 'dbt', 'fellowship'
+                    ],
+                    'entrance': [
+                        'gate', 'jam', 'joint admission test', 'nest', 'national entrance screening test',
+                        'kvpy', 'inspire', 'olympiad', 'ntse', 'jee', 'neet', 'bitsat'
+                    ],
+                    
+                    // Data Analytics and Engineering
+                    'data': ['data', 'analytics', 'analysis', 'statistics', 'data science', 'machine learning', 'ai'],
+                    'marks': ['marks', 'scores', 'grades', 'performance', 'result', 'aggregate'],
+                    'analysis': ['analysis', 'analytical', 'insights', 'trends', 'patterns', 'correlation'],
+                    'engineering': ['engineering', 'technology', 'technical', 'btech', 'be', 'mtech'],
+                    'college': ['college', 'university', 'institute', 'campus', 'institution', 'school'],
+                    'admission': ['admission', 'selection', 'eligibility', 'application', 'form', 'process'],
+                    'branch': ['branch', 'stream', 'specialization', 'course', 'program', 'discipline'],
+                    'general': ['general', 'faq', 'common', 'basic', 'overview', 'introduction', 'about']
+                };
+
+                Object.keys(keywords).forEach(key => {
+                    if (keywords[key].some(keyword => 
+                        item.title.toLowerCase().includes(keyword) ||
+                        item.category.toLowerCase().includes(keyword)
+                    )) {
+                        if (query.includes(key)) {
+                            score += 7;
+                            if (!matchedText) matchedText = item.title;
+                        }
+                    }
+                });
+
+                if (score > 0) {
+                    results.push({
+                        ...item,
+                        score,
+                        matchedText,
+                        excerpt: excerpt || generateFallbackExcerpt(item, query)
+                    });
+                }
+            }
+
+            // Sort by score (descending)
+            results.sort((a, b) => b.score - a.score);
+            return results.slice(0, 10); // Increase to top 10 results
+        }
+
+        // Generate fallback excerpt for search results when no content excerpt is available
+        function generateFallbackExcerpt(item, query) {
+            const excerpts = {
+                'General FAQ': 'General questions and answers about admissions, processes, and guidance.',
+                'Operational FAQ': 'Information about Margdarshak operations, group rules, and how we help.',
+                'ComedK FAQ': 'Complete guide to ComedK entrance exam, eligibility, application process, and counseling.',
+                'JEE FAQ': 'Comprehensive JEE Mains and Advanced information, preparation tips, and admission guidance.',
+                'JEE - Tips from Parents': 'Proven strategies and advice from parents whose children succeeded in JEE.',
+                'KCET FAQ': 'Karnataka CET exam details, eligibility, important dates, and counseling process.',
+                'PESU FAQ': 'PES University admission process, cutoffs, and detailed guidance for aspirants.',
+                'BITS Guide': 'Comprehensive guide to BITS Pilani, Goa & Hyderabad including BITSAT, campus life, placements, and admission strategies.',
+                'VIT Guide': 'Complete VIT University guide covering VITEEE, campus culture, rules, placements, and honest student perspectives.',
+                'Medical FAQ': 'Complete NEET and medical admissions guide including KEA counseling, college selection, and fee structures.',
+                'Science and Mathematics FAQ': 'Complete pure science career guidance covering Physics, Chemistry, Biology, Mathematics, research opportunities, and academic pathways. Includes detailed information about IISER, IISC Bangalore, NISER, TIFR, and other premier research institutions. Covers KVPY, INSPIRE, JAM, GATE Life Sciences, and research career paths.',
+                'KCET - Marks vs Rank Analysis': 'Statistical analysis of KCET 2025 marks vs rank correlation with insights.',
+                'ComedK - Marks vs Rank Analysis': 'Comprehensive ComedK marks vs rank analysis based on parent responses.',
+                'JEE - Percentile vs Rank Analysis': 'Complete JEE percentile vs rank data analysis for 2025 sessions.',
+                'PES - Counseling Analysis': 'Detailed analysis of PES JOSAA counseling cutoffs and admission data.'
+            };
+
+            return excerpts[item.title] || `Information about ${item.title} in ${item.category} section.`;
+        }
+
+        // Display search results
+        function displaySearchResults(results) {
+            const resultsContainer = document.getElementById('search-results');
+            
+            if (results.length === 0) {
+                resultsContainer.innerHTML = '<div class="search-result-item"><div class="search-result-title">No results found</div><div class="search-result-excerpt">Try different keywords or browse the menu below.</div></div>';
+                resultsContainer.style.display = 'block';
+                return;
+            }
+
+            let html = '';
+            results.forEach(result => {
+                const highlightedTitle = highlightMatch(result.title, document.getElementById('search-input').value);
+                html += `
+                    <div class="search-result-item" onclick="openSearchResult('${result.file}', '${result.title}')">
+                        <div class="search-result-title">${highlightedTitle}</div>
+                        <div class="search-result-excerpt">${result.excerpt}</div>
+                        <div class="search-result-source">${result.category}${result.subcategory ? ' → ' + result.subcategory : ''}</div>
+                    </div>
+                `;
+            });
+
+            resultsContainer.innerHTML = html;
+            resultsContainer.style.display = 'block';
+        }
+
+        // Highlight matching text
+        function highlightMatch(text, query) {
+            if (!query) return text;
+            const regex = new RegExp(`(${query.replace(/[.*+?^${}()|[\\]\\\\]/g, '\\\\$&')})`, 'gi');
+            return text.replace(regex, '<span class="search-highlight">$1</span>');
+        }
+
+        // Open search result
+        function openSearchResult(file, title) {
+            const filePath = file.startsWith('../') || file.startsWith('data/') || file.startsWith('documents/') ? file : `documents/${file}`;
+            loadDocument(filePath);
+            clearSearch();
+            closeSidebar();
+        }
+
+        // Clear search
+        function clearSearch() {
+            document.getElementById('search-input').value = '';
+            document.getElementById('search-results').style.display = 'none';
+            document.getElementById('search-clear').style.display = 'none';
+        }
+
+        // Initialize search functionality
+        function initializeSearch() {
+            const searchInput = document.getElementById('search-input');
+            const searchClear = document.getElementById('search-clear');
+            const searchResults = document.getElementById('search-results');
+
+            // Create search index
+            createSearchIndex();
+
+            // Search input event
+            searchInput.addEventListener('input', async function(e) {
+                const query = e.target.value.trim();
+                
+                if (query.length >= 2) {
+                    // Show loading state
+                    const resultsContainer = document.getElementById('search-results');
+                    resultsContainer.innerHTML = '<div class="search-result-item"><div class="search-result-title">Searching...</div><div class="search-result-excerpt">Please wait while we search through all documents.</div></div>';
+                    resultsContainer.style.display = 'block';
+                    
+                    try {
+                        const results = await performSearch(query);
+                        displaySearchResults(results);
+                    } catch (error) {
+                        console.error('Search error:', error);
+                        resultsContainer.innerHTML = '<div class="search-result-item"><div class="search-result-title">Search Error</div><div class="search-result-excerpt">Unable to perform search. Please try again.</div></div>';
+                    }
+                    
+                    searchClear.style.display = 'block';
+                } else {
+                    searchResults.style.display = 'none';
+                    searchClear.style.display = 'none';
+                }
+            });
+
+            // Clear button event
+            searchClear.addEventListener('click', clearSearch);
+
+            // Hide results when clicking outside
+            document.addEventListener('click', function(e) {
+                if (!e.target.closest('.search-section')) {
+                    searchResults.style.display = 'none';
+                }
+            });
+
+            // Show results when focusing on input (if there's content)
+            searchInput.addEventListener('focus', function() {
+                if (this.value.trim().length >= 2) {
+                    searchResults.style.display = 'block';
+                }
+            });
+
+            // Handle enter key
+            searchInput.addEventListener('keydown', function(e) {
+                if (e.key === 'Enter') {
+                    e.preventDefault();
+                    const firstResult = searchResults.querySelector('.search-result-item');
+                    if (firstResult) {
+                        firstResult.click();
+                    }
+                }
+            });
+        }
+
+        // AI Chatbot Functionality
+        class MargdarshakChatbot {
+            constructor() {
+                this.apiBaseUrl = ''; // Disabled for static deployment
+                this.isLoading = false;
+                this.isStaticMode = true; // Always use static mode for Netlify deployment
+                this.init();
+            }
+
+            init() {
+                this.bindEvents();
+                this.initializeStaticMode(); // Skip backend health check for static deployment
+            }
+
+            bindEvents() {
+                const input = document.getElementById('chatbot-input');
+                const sendBtn = document.getElementById('chatbot-send');
+                const clearBtn = document.getElementById('clear-response');
+                const exampleQuestions = document.querySelectorAll('.example-question');
+
+                // Send button click
+                sendBtn.addEventListener('click', () => this.sendMessage());
+
+                // Clear response button click
+                clearBtn.addEventListener('click', () => this.clearResponse());
+
+                // Enter key press
+                input.addEventListener('keypress', (e) => {
+                    if (e.key === 'Enter' && !this.isLoading) {
+                        this.sendMessage();
+                    }
+                });
+
+                // Example question clicks
+                exampleQuestions.forEach(example => {
+                    example.addEventListener('click', () => {
+                        const question = example.getAttribute('data-question');
+                        input.value = question;
+                        this.sendMessage();
+                    });
+                });
+            }
+
+            async checkStatus() {
+                // Skip status check for static deployment - always show ready
+                const statusElement = document.getElementById('chatbot-status');
+                statusElement.textContent = 'Ready (Static Search)';
+                statusElement.style.background = 'rgba(34, 197, 94, 0.3)';
+            }
+
+            initializeStaticMode() {
+                // Set static mode status
+                const statusElement = document.getElementById('chatbot-status');
+                statusElement.textContent = 'Ready (Static Mode)';
+                statusElement.style.background = 'rgba(34, 197, 94, 0.3)';
+                
+                console.log('Chatbot initialized in static mode for Netlify deployment');
+            }
+
+            async sendMessage() {
+                if (this.isLoading) return;
+
+                const input = document.getElementById('chatbot-input');
+                const question = input.value.trim();
+                
+                if (!question) return;
+
+                this.setLoading(true);
+                this.showResponse('Searching documents<span class="loading-dots"></span>', 'Finding relevant FAQs...');
+
+                // For Netlify deployment, use enhanced static search
+                try {
+                    // Simulate a small delay for better UX
+                    await new Promise(resolve => setTimeout(resolve, 500));
+                    
+                    // Use the enhanced performSearch function instead of basic fallback
+                    const searchResults = await performSearch(question);
+                    
+                    if (searchResults && searchResults.length > 0) {
+                        // Convert search results to the expected format
+                        const documentLinks = searchResults.map(result => ({
+                            source: result.file.split('/').pop(), // Get filename only
+                            url: result.file,
+                            relevance: result.score / 10, // Normalize score
+                            questions: [{
+                                question: result.matchedText || result.title,
+                                similarity: result.score / 10,
+                                preview: result.excerpt || `Information about ${result.title}`
+                            }]
+                        }));
+                        
+                        const enhancedData = {
+                            success: true,
+                            type: 'document_links',
+                            message: `Found ${documentLinks.length} relevant document(s) for your question:`,
+                            question: question,
+                            document_links: documentLinks,
+                            total_matches: searchResults.length
+                        };
+                        
+                        this.showDocumentLinks(enhancedData);
+                    } else {
+                        // If enhanced search returns no results, use fallback
+                        this.fallbackSearch(question);
+                    }
+                    
+                    // Clear input
+                    input.value = '';
+
+                } catch (error) {
+                    console.error('Enhanced search error:', error);
+                    // Fallback to basic search functionality
+                    this.fallbackSearch(question);
+                } finally {
+                    this.setLoading(false);
+                }
+            }
+
+            fallbackSearch(question) {
+                // Enhanced static search with comprehensive document matching
+                console.log('Using static search mode for Netlify deployment');
+                
+                const lowerQuestion = question.toLowerCase();
+                let fallbackData = {
+                    success: true,
+                    type: 'document_links',
+                    message: 'Found relevant documents for your question:',
+                    question: question,
+                    document_links: [],
+                    total_matches: 0
+                };
+                
+                // Enhanced keyword matching with multiple document suggestions
+                if (lowerQuestion.includes('kcet') || lowerQuestion.includes('karnataka')) {
+                    fallbackData.document_links.push({
+                        source: 'Margdarshak FAQ - KCET.html',
+                        url: 'documents/Margdarshak FAQ - KCET.html',
+                        relevance: 0.90,
+                        questions: [{
+                            question: 'What is KCET and how do I prepare?',
+                            similarity: 0.90,
+                            preview: 'KCET (Karnataka Common Entrance Test) is conducted by KEA for engineering admissions in Karnataka...'
+                        }, {
+                            question: 'KCET eligibility criteria and application process',
+                            similarity: 0.85,
+                            preview: 'Complete guide to KCET eligibility, application deadlines, and admission procedures...'
+                        }]
+                    });
+                } 
+                
+                if (lowerQuestion.includes('jee') || lowerQuestion.includes('iit') || lowerQuestion.includes('nit')) {
+                    fallbackData.document_links.push({
+                        source: 'Margdarshak FAQ - JEE.html',
+                        url: 'documents/Margdarshak FAQ - JEE.html',
+                        relevance: 0.92,
+                        questions: [{
+                            question: 'JEE Main and Advanced preparation strategy',
+                            similarity: 0.92,
+                            preview: 'Complete JEE preparation guide including study plans, important topics, and exam strategies...'
+                        }, {
+                            question: 'JEE counseling and college selection',
+                            similarity: 0.88,
+                            preview: 'Guide to JEE counseling process, college preferences, and seat allocation...'
+                        }]
+                    });
+                    fallbackData.document_links.push({
+                        source: 'JEE - Tips from Parents.html',
+                        url: 'documents/JEE - Tips from Parents.html',
+                        relevance: 0.78,
+                        questions: [{
+                            question: 'Real parent experiences and advice for JEE',
+                            similarity: 0.78,
+                            preview: 'Valuable insights and practical tips from parents whose children successfully cleared JEE...'
+                        }]
+                    });
+                } 
+                
+                if (lowerQuestion.includes('comedk') || lowerQuestion.includes('comed-k')) {
+                    fallbackData.document_links.push({
+                        source: 'Margdarshak FAQ - ComedK.html',
+                        url: 'documents/Margdarshak FAQ - ComedK.html',
+                        relevance: 0.89,
+                        questions: [{
+                            question: 'ComedK exam pattern and preparation',
+                            similarity: 0.89,
+                            preview: 'Complete guide to ComedK exam pattern, syllabus, and preparation strategies...'
+                        }, {
+                            question: 'ComedK counseling and college selection',
+                            similarity: 0.85,
+                            preview: 'Understanding ComedK counseling process and private college admissions...'
+                        }]
+                    });
+                } 
+                
+                if (lowerQuestion.includes('pes') || lowerQuestion.includes('pesu') || lowerQuestion.includes('pesit')) {
+                    fallbackData.document_links.push({
+                        source: 'Margdarshak FAQ - PESU.html',
+                        url: 'documents/Margdarshak FAQ - PESU.html',
+                        relevance: 0.87,
+                        questions: [{
+                            question: 'PES University admissions and procedures',
+                            similarity: 0.87,
+                            preview: 'Complete guide to PES University admission process, courses, and requirements...'
+                        }]
+                    });
+                } 
+                
+                if (lowerQuestion.includes('medical') || lowerQuestion.includes('neet') || lowerQuestion.includes('mbbs')) {
+                    fallbackData.document_links.push({
+                        source: 'Medical.html',
+                        url: 'documents/Medical.html',
+                        relevance: 0.85,
+                        questions: [{
+                            question: 'Medical college admissions through NEET',
+                            similarity: 0.85,
+                            preview: 'Complete guide to medical admissions, NEET preparation, and college selection...'
+                        }]
+                    });
+                }
+                
+                if (lowerQuestion.includes('bits') || lowerQuestion.includes('pilani')) {
+                    fallbackData.document_links.push({
+                        source: 'BITS.html',
+                        url: 'documents/BITS.html',
+                        relevance: 0.88,
+                        questions: [{
+                            question: 'BITS Pilani admissions and BITSAT',
+                            similarity: 0.88,
+                            preview: 'Guide to BITS admissions, BITSAT exam, and campus selection...'
+                        }]
+                    });
+                }
+                
+                if (lowerQuestion.includes('vit') || lowerQuestion.includes('vellore')) {
+                    fallbackData.document_links.push({
+                        source: 'VIT.html',
+                        url: 'documents/VIT.html',
+                        relevance: 0.86,
+                        questions: [{
+                            question: 'VIT University admissions and VITEEE',
+                            similarity: 0.86,
+                            preview: 'Complete guide to VIT admissions, VITEEE exam, and campus selection...'
+                        }]
+                    });
+                }
+                
+                // Enhanced Science and Mathematics queries
+                if (lowerQuestion.includes('science') || lowerQuestion.includes('mathematics') || lowerQuestion.includes('physics') || 
+                    lowerQuestion.includes('chemistry') || lowerQuestion.includes('biology') || lowerQuestion.includes('math') || 
+                    lowerQuestion.includes('maths') || lowerQuestion.includes('research') || lowerQuestion.includes('pure science') ||
+                    lowerQuestion.includes('iiser') || lowerQuestion.includes('iisc') || lowerQuestion.includes('niser') ||
+                    lowerQuestion.includes('iat') || lowerQuestion.includes('tifr') || lowerQuestion.includes('isi') ||
+                    lowerQuestion.includes('kvpy') || lowerQuestion.includes('inspire') || lowerQuestion.includes('jam') ||
+                    lowerQuestion.includes('gate life') || lowerQuestion.includes('phd') || lowerQuestion.includes('doctorate') ||
+                    lowerQuestion.includes('theoretical') || lowerQuestion.includes('computational') || lowerQuestion.includes('experimental')) {
+                    fallbackData.document_links.push({
+                        source: 'Science and Mathematics.html',
+                        url: 'documents/Science and Mathematics.html',
+                        relevance: 0.92,
+                        questions: [{
+                            question: 'IISER and IISC admissions through KVPY and JAM',
+                            similarity: 0.92,
+                            preview: 'Complete guide to top science institutions like IISER, IISC Bangalore, NISER, TIFR and admission processes...'
+                        }, {
+                            question: 'Pure science career paths and research opportunities',
+                            similarity: 0.90,
+                            preview: 'Detailed information about research careers, PhD programs, and academic pathways in sciences...'
+                        }, {
+                            question: 'Best institutions for science and mathematics education',
+                            similarity: 0.88,
+                            preview: 'Premier institutions for Physics, Chemistry, Biology, Mathematics including IISERs and research institutes...'
+                        }]
+                    });
+                }
+                
+                // Data Analytics queries
+                if (lowerQuestion.includes('data') || lowerQuestion.includes('analytics') || lowerQuestion.includes('analysis') || 
+                    lowerQuestion.includes('marks vs rank') || lowerQuestion.includes('statistics') || lowerQuestion.includes('trends')) {
+                    fallbackData.document_links.push({
+                        source: 'KCET 2025 Analytics.html',
+                        url: 'documents/KCET 2025 Analytics.html',
+                        relevance: 0.88,
+                        questions: [{
+                            question: 'KCET marks vs rank statistical analysis',
+                            similarity: 0.88,
+                            preview: 'Comprehensive analysis of KCET 2025 marks vs rank correlation with insights and trends...'
+                        }]
+                    });
+                    fallbackData.document_links.push({
+                        source: 'ComedK - Marks vs Rank Analysis.html',
+                        url: 'documents/ComedK - Marks vs Rank Analysis.html',
+                        relevance: 0.85,
+                        questions: [{
+                            question: 'ComedK marks vs rank data analysis',
+                            similarity: 0.85,
+                            preview: 'Statistical analysis of ComedK exam performance and rank correlations...'
+                        }]
+                    });
+                }
+                
+                // If no specific matches, provide general guidance
+                if (fallbackData.document_links.length === 0) {
+                    fallbackData.document_links.push({
+                        source: 'Margdarshak FAQ - General.html',
+                        url: 'documents/Margdarshak FAQ - General.html',
+                        relevance: 0.60,
+                        questions: [{
+                            question: 'General admission guidance and procedures',
+                            similarity: 0.60,
+                            preview: 'General information about college admissions, entrance exams, and counseling processes...'
+                        }]
+                    });
+                    
+                    // Add multiple general suggestions
+                    fallbackData.document_links.push({
+                        source: 'Margdarshak FAQ - Different College Landscape.html',
+                        url: 'documents/Margdarshak FAQ - Different College Landscape.html',
+                        relevance: 0.55,
+                        questions: [{
+                            question: 'Understanding different college types and options',
+                            similarity: 0.55,
+                            preview: 'Overview of various college types, admission processes, and selection criteria...'
+                        }]
+                    });
+                }
+                
+                fallbackData.total_matches = fallbackData.document_links.length;
+                fallbackData.message = `Found ${fallbackData.document_links.length} relevant document(s) for your question:`;
+                
+                this.showDocumentLinks(fallbackData);
+            }
+
+            showDocumentLinks(data) {
+                const responseDiv = document.getElementById('chatbot-response');
+                const responseText = document.getElementById('response-text');
+                const responseConfidence = document.getElementById('response-confidence');
+                
+                // Create the links HTML
+                let linksHtml = `
+                    <div class="document-links-container">
+                        <h4 class="links-title">📋 ${data.message}</h4>
+                        <div class="document-links-list">
+                `;
+                
+                data.document_links.forEach((docLink, index) => {
+                    const relevancePercentage = Math.round(docLink.relevance * 100);
+                    const sourceDisplayName = docLink.source.replace('.html', '').replace(/[_-]/g, ' ');
+                    
+                    linksHtml += `
+                        <div class="document-link-card" data-relevance="${relevancePercentage}">
+                            <div class="document-link-header">
+                                <h5 class="document-title">
+                                    <a href="${docLink.url}" class="document-link">
+                                        📄 ${sourceDisplayName}
+                                    </a>
+                                </h5>
+                                <span class="relevance-badge">${relevancePercentage}% match</span>
+                            </div>
+                            <div class="document-questions">
+                    `;
+                    
+                    docLink.questions.forEach((question, qIndex) => {
+                        if (qIndex < 2) { // Show max 2 questions per document
+                            linksHtml += `
+                                <div class="related-question">
+                                    <strong>❓ ${question.question}</strong>
+                                    <p class="question-preview">${question.preview}</p>
+                                </div>
+                            `;
+                        }
+                    });
+                    
+                    if (docLink.questions.length > 2) {
+                        linksHtml += `<p class="more-questions">...and ${docLink.questions.length - 2} more related questions</p>`;
+                    }
+                    
+                    linksHtml += `
+                            </div>
+                        </div>
+                    `;
+                });
+                
+                linksHtml += `
+                        </div>
+                        <div class="search-tip">
+                            💡 <strong>Tip:</strong> Click on any document link above to read the full FAQ section and get detailed answers.
+                        </div>
+                    </div>
+                `;
+                
+                responseText.innerHTML = linksHtml;
+                responseConfidence.textContent = `Found ${data.total_matches} relevant matches`;
+                
+                responseDiv.classList.add('show');
+                
+                // Add smooth navigation handlers to document links
+                this.addNavigationHandlers();
+                
+                // Smooth scroll to response
+                responseDiv.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+            }
+
+            addNavigationHandlers() {
+                // Add click handlers to all document links for smooth navigation
+                const documentLinks = document.querySelectorAll('.document-link');
+                documentLinks.forEach(link => {
+                    link.addEventListener('click', (e) => {
+                        e.preventDefault(); // Prevent default navigation
+                        
+                        const url = link.getAttribute('href');
+                        const linkElement = e.currentTarget;
+                        
+                        // Add navigating state
+                        linkElement.classList.add('navigating');
+                        
+                        // Show navigation feedback
+                        const originalText = linkElement.textContent;
+                        
+                        // Navigate after a brief delay for visual feedback
+                        setTimeout(() => {
+                            // Store current page info for back navigation
+                            sessionStorage.setItem('previousPage', 'margdarshak-vault');
+                            sessionStorage.setItem('previousUrl', window.location.href);
+                            
+                            // Navigate to the document
+                            window.location.href = url;
+                        }, 200);
+                    });
+                });
+            }
+
+            showResponse(text, metadata = '') {
+                const responseDiv = document.getElementById('chatbot-response');
+                const responseText = document.getElementById('response-text');
+                const responseConfidence = document.getElementById('response-confidence');
+                
+                responseText.innerHTML = text;
+                responseConfidence.textContent = metadata;
+                
+                responseDiv.classList.add('show');
+                
+                // Smooth scroll to response
+                responseDiv.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+            }
+
+            setLoading(loading) {
+                this.isLoading = loading;
+                const sendBtn = document.getElementById('chatbot-send');
+                const statusElement = document.getElementById('chatbot-status');
+                
+                if (loading) {
+                    sendBtn.disabled = true;
+                    sendBtn.querySelector('span').textContent = 'Thinking...';
+                    statusElement.textContent = 'Processing...';
+                } else {
+                    sendBtn.disabled = false;
+                    sendBtn.querySelector('span').textContent = 'Ask';
+                    this.checkStatus(); // Refresh status
+                }
+            }
+
+            clearResponse() {
+                const responseDiv = document.getElementById('chatbot-response');
+                const responseText = document.getElementById('response-text');
+                const responseConfidence = document.getElementById('response-confidence');
+                const input = document.getElementById('chatbot-input');
+                
+                // Clear the response content
+                responseText.innerHTML = '';
+                responseConfidence.textContent = '';
+                
+                // Hide the response div
+                responseDiv.classList.remove('show');
+                
+                // Clear the input field
+                input.value = '';
+                
+                // Focus back to input
+                input.focus();
+            }
+        }
+
+        // Initialize chatbot
+        let margdarshakChatbot;
+
+        // Load documents when page loads
+        window.addEventListener('load', function() {
+            loadDocuments();
+            addMobileMenuHandlers();
+            handleWindowResize(); // Ensure correct initial state
+            // initializeSearch(); // REMOVED: Using AI Chatbot instead of sidebar search
+            
+            // Initialize AI Chatbot
+            margdarshakChatbot = new MargdarshakChatbot();
+        });
+    </script>
+    
+    <!-- PWA Manager Script -->
+    <script src="./js/pwa-manager.js"></script>
+</body>
+</html>

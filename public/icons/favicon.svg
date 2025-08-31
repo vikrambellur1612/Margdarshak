@@ -1,0 +1,37 @@
+<svg width="192" height="192" viewBox="0 0 192 192" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="192" height="192" rx="32" fill="url(#gradient)"/>
+  
+  <!-- Book Icon -->
+  <path d="M48 144V48C48 41.3726 53.3726 36 60 36H132C138.627 36 144 41.3726 144 48V144C144 150.627 138.627 156 132 156H60C53.3726 156 48 150.627 48 144Z" fill="white" fill-opacity="0.9"/>
+  
+  <!-- Pages -->
+  <rect x="60" y="48" width="72" height="96" fill="url(#pageGradient)"/>
+  
+  <!-- Bookmark -->
+  <path d="M120 48V144L108 132L96 144V48H120Z" fill="#2c5aa0"/>
+  
+  <!-- Lines representing text -->
+  <rect x="72" y="72" width="36" height="2" fill="#2c5aa0" fill-opacity="0.6"/>
+  <rect x="72" y="84" width="48" height="2" fill="#2c5aa0" fill-opacity="0.6"/>
+  <rect x="72" y="96" width="42" height="2" fill="#2c5aa0" fill-opacity="0.6"/>
+  <rect x="72" y="108" width="45" height="2" fill="#2c5aa0" fill-opacity="0.6"/>
+  
+  <!-- Graduation cap on top -->
+  <g transform="translate(84, 20)">
+    <ellipse cx="12" cy="16" rx="16" ry="6" fill="#2c5aa0"/>
+    <path d="M4 16L12 12L20 16L12 20L4 16Z" fill="#1e3a8a"/>
+    <rect x="19" y="12" width="2" height="8" fill="#1e3a8a"/>
+    <circle cx="21" cy="12" r="1.5" fill="#fbbf24"/>
+  </g>
+  
+  <defs>
+    <linearGradient id="gradient" x1="0" y1="0" x2="1" y2="1">
+      <stop stop-color="#667eea"/>
+      <stop offset="1" stop-color="#764ba2"/>
+    </linearGradient>
+    <linearGradient id="pageGradient" x1="0" y1="0" x2="1" y2="1">
+      <stop stop-color="#f8fafc"/>
+      <stop offset="1" stop-color="#e2e8f0"/>
+    </linearGradient>
+  </defs>
+</svg>
