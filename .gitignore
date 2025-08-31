@@ -1,15 +1,24 @@
 # Dependencies
 node_modules/
+jspm_packages/
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
+lerna-debug.log*
 
 # Build output
 dist/
 build/
+.next
+out
+.nuxt
+.vuepress/dist
+.svelte-kit/
 
 # Environment variables
 .env
+.env.*
+!.env.example
 .env.local
 .env.development.local
 .env.test.local
@@ -17,6 +26,7 @@ build/
 
 # IDE files
 .vscode/
+.vscode-test
 .idea/
 *.swp
 *.swo
@@ -45,6 +55,25 @@ venv/
 .venv/
 .env/
 
+# Runtime data
+pids
+*.pid
+*.seed
+*.pid.lock
+
+# Coverage directory used by tools like istanbul
+coverage
+*.lcov
+.nyc_output
+
+# Cache directories
+.cache
+.parcel-cache
+.eslintcache
+.stylelintcache
+.npm
+*.tsbuildinfo
+
 # Temporary files
 *.tmp
 *.temp
@@ -59,3 +88,25 @@ test-local.sh
 # Backup files
 *.bak
 *.backup
+
+# Optional files
+.yarn-integrity
+*.tgz
+.tern-port
+.fusebox/
+.serverless/
+.dynamodb/
+.firebase/
+
+# Yarn v3
+.pnp.*
+.yarn/*
+!.yarn/patches
+!.yarn/plugins
+!.yarn/releases
+!.yarn/sdks
+!.yarn/versions
+
+# Vite logs
+vite.config.js.timestamp-*
+vite.config.ts.timestamp-*
