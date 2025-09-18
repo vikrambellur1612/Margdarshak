@@ -1,0 +1,830 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Top 100 Margdarshak Questions - FAQ Development</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            background-color: #f8f9fa;
+            color: #333;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: white;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+        
+        h1 {
+            color: #2c5282;
+            text-align: center;
+            border-bottom: 3px solid #3498db;
+            padding-bottom: 10px;
+            margin-bottom: 30px;
+            font-size: 2.5em;
+        }
+        
+        .subtitle {
+            text-align: center;
+            color: #666;
+            font-style: italic;
+            font-size: 1.1em;
+            margin-bottom: 30px;
+        }
+        
+        .stats {
+            background-color: #e8f4fd;
+            padding: 20px;
+            border-radius: 8px;
+            margin-bottom: 30px;
+            border-left: 4px solid #3498db;
+        }
+        
+        .stats h3 {
+            color: #2c5282;
+            margin-top: 0;
+        }
+        
+        .category-header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 20px;
+            margin: 40px 0 20px 0;
+            border-radius: 8px;
+            text-align: center;
+        }
+        
+        .category-header h2 {
+            margin: 0;
+            font-size: 1.8em;
+        }
+        
+        .category-count {
+            font-size: 0.9em;
+            opacity: 0.9;
+            margin-top: 5px;
+        }
+        
+        .subcategory {
+            background-color: #f8f9fa;
+            padding: 15px;
+            margin: 20px 0;
+            border-left: 4px solid #28a745;
+            border-radius: 4px;
+        }
+        
+        .subcategory h3 {
+            color: #155724;
+            margin-top: 0;
+            font-size: 1.3em;
+        }
+        
+        .question-list {
+            margin: 15px 0;
+        }
+        
+        .question-item {
+            background-color: white;
+            margin: 8px 0;
+            padding: 12px 20px;
+            border-radius: 6px;
+            border-left: 3px solid #3498db;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+            transition: all 0.3s ease;
+        }
+        
+        .question-item:hover {
+            transform: translateX(5px);
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            border-left-color: #2980b9;
+        }
+        
+        .question-number {
+            font-weight: bold;
+            color: #2c5282;
+        }
+        
+        .question-text {
+            margin-left: 10px;
+            color: #555;
+        }
+        
+        .growing-tag {
+            background-color: #28a745;
+            color: white;
+            padding: 3px 8px;
+            border-radius: 12px;
+            font-size: 0.8em;
+            margin-left: 10px;
+        }
+        
+        .summary-section {
+            background-color: #fff3cd;
+            padding: 25px;
+            border-radius: 8px;
+            margin-top: 40px;
+            border-left: 4px solid #ffc107;
+        }
+        
+        .summary-section h3 {
+            color: #856404;
+            margin-top: 0;
+        }
+        
+        .summary-stats {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin: 20px 0;
+        }
+        
+        .stat-box {
+            background-color: white;
+            padding: 15px;
+            border-radius: 6px;
+            border-left: 3px solid #ffc107;
+        }
+        
+        .stat-label {
+            font-weight: bold;
+            color: #856404;
+        }
+        
+        .stat-value {
+            color: #333;
+            margin-top: 5px;
+        }
+        
+        .footer-note {
+            background-color: #e7f3ff;
+            padding: 20px;
+            border-radius: 8px;
+            margin-top: 30px;
+            text-align: center;
+            border-left: 4px solid #2196f3;
+        }
+        
+        @media (max-width: 768px) {
+            .container {
+                padding: 15px;
+            }
+            
+            h1 {
+                font-size: 2em;
+            }
+            
+            .question-item {
+                padding: 10px 15px;
+            }
+            
+            .summary-stats {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>📚 Top 100 Margdarshak Questions for FAQ Development</h1>
+        <p class="subtitle">Based on analysis of 398+ queries from Margdarshak participants</p>
+        
+        <div class="stats">
+            <h3>📊 Overview</h3>
+            <p>These are the most frequently asked and relevant questions for undergraduate entrance exams, organized by priority and frequency to help build comprehensive FAQ resources.</p>
+        </div>
+
+        <div class="category-header">
+            <h2>🔧 Engineering General</h2>
+            <div class="category-count">Most Frequent Category - 152 queries</div>
+        </div>
+
+        <div class="subcategory">
+            <h3>📅 Application Process & Timelines</h3>
+            <div class="question-list">
+                <div class="question-item">
+                    <span class="question-number">1.</span>
+                    <span class="question-text">How do I track all important exam registration dates so I don't miss any registrations?</span>
+                </div>
+                <div class="question-item">
+                    <span class="question-number">2.</span>
+                    <span class="question-text">What are the requirements we need to keep ready for the registration process? Can you provide a checklist?</span>
+                </div>
+                <div class="question-item">
+                    <span class="question-number">3.</span>
+                    <span class="question-text">When do applications start for various engineering entrance exams and what documents should be ready?</span>
+                </div>
+                <div class="question-item">
+                    <span class="question-number">4.</span>
+                    <span class="question-text">Will we get all links and deadlines for filling up forms related to JEE and other entrance exams?</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="subcategory">
+            <h3>🏆 College Rankings, Cutoffs & Placements</h3>
+            <div class="question-list">
+                <div class="question-item">
+                    <span class="question-number">5.</span>
+                    <span class="question-text">Where can I find rankings of all engineering colleges and previous year JEE Mains percentile cutoffs?</span>
+                </div>
+                <div class="question-item">
+                    <span class="question-number">6.</span>
+                    <span class="question-text">Will top engineering colleges guarantee high package salaries in campus placements?</span>
+                </div>
+                <div class="question-item">
+                    <span class="question-number">7.</span>
+                    <span class="question-text">What are the previous year cutoffs by college and branch for different entrance exams?</span>
+                </div>
+                <div class="question-item">
+                    <span class="question-number">8.</span>
+                    <span class="question-text">How can I get information about placement statistics of different colleges?</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="subcategory">
+            <h3>🚀 Career Options & Branch Selection</h3>
+            <div class="question-list">
+                <div class="question-item">
+                    <span class="question-number">9.</span>
+                    <span class="question-text">Is it a good idea to do computer science engineering given AI is replacing jobs?</span>
+                </div>
+                <div class="question-item">
+                    <span class="question-number">10.</span>
+                    <span class="question-text">Which engineering branch is best considering the present and future job market?</span>
+                </div>
+                <div class="question-item">
+                    <span class="question-number">11.</span>
+                    <span class="question-text">How can my child figure out their area of interest in engineering?</span>
+                </div>
+                <div class="question-item">
+                    <span class="question-number">12.</span>
+                    <span class="question-text">What factors should be considered while selecting a major in college?</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="subcategory">
+            <h3>📚 Entrance Exams Overview</h3>
+            <div class="question-list">
+                <div class="question-item">
+                    <span class="question-number">13.</span>
+                    <span class="question-text">What are the different competitive exams my kid can appear for to get admission in the best engineering colleges in India?</span>
+                </div>
+                <div class="question-item">
+                    <span class="question-number">14.</span>
+                    <span class="question-text">What are the options for children preparing for JEE 2026 and other entrance exams?</span>
+                </div>
+                <div class="question-item">
+                    <span class="question-number">15.</span>
+                    <span class="question-text">What are all the engineering entrance exam application opening dates and links?</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="category-header">
+            <h2>🎓 JEE/IIT/NIT/IIIT/BITS</h2>
+            <div class="category-count">31 queries</div>
+        </div>
+
+        <div class="subcategory">
+            <h3>📖 JEE Preparation & Strategy</h3>
+            <div class="question-list">
+                <div class="question-item">
+                    <span class="question-number">16.</span>
+                    <span class="question-text">My daughter is scoring 90/300 on average. Should she focus only on JEE Mains and stop focusing on JEE Advanced?</span>
+                </div>
+                <div class="question-item">
+                    <span class="question-number">17.</span>
+                    <span class="question-text">Is there any particular strategy to clear JEE Mains? What guidelines would be helpful for students?</span>
+                </div>
+                <div class="question-item">
+                    <span class="question-number">18.</span>
+                    <span class="question-text">What are the best resources for children to refer to just before the JEE entrance exam?</span>
+                </div>
+                <div class="question-item">
+                    <span class="question-number">19.</span>
+                    <span class="question-text">When is the ideal time to start preparing for JEE?</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="subcategory">
+            <h3>🏆 College Selection & Cutoffs</h3>
+            <div class="question-list">
+                <div class="question-item">
+                    <span class="question-number">20.</span>
+                    <span class="question-text">What is the score range for JEE Mains to get into one of the top 3-4 NITs?</span>
+                </div>
+                <div class="question-item">
+                    <span class="question-number">21.</span>
+                    <span class="question-text">Apart from IITs, NITs, IIITs, what colleges use JEE Mains for admission?</span>
+                </div>
+                <div class="question-item">
+                    <span class="question-number">22.</span>
+                    <span class="question-text">What are the best options if a student doesn't qualify for JEE Advanced?</span>
+                </div>
+                <div class="question-item">
+                    <span class="question-number">23.</span>
+                    <span class="question-text">My child is an average student appearing for JEE. What are the chances of getting a reasonably good branch and college?</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="subcategory">
+            <h3>📝 Application Process</h3>
+            <div class="question-list">
+                <div class="question-item">
+                    <span class="question-number">24.</span>
+                    <span class="question-text">When do applications start for IITs, NITs, IIITs - is it one application or separate for each?</span>
+                </div>
+                <div class="question-item">
+                    <span class="question-number">25.</span>
+                    <span class="question-text">When do we start the JEE Mains application and what documents should be kept ready?</span>
+                </div>
+                <div class="question-item">
+                    <span class="question-number">26.</span>
+                    <span class="question-text">Is the tuition fee structure different/higher for OCI students in IITs and NITs?</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="category-header">
+            <h2>🏛️ KCET/COMEDK</h2>
+            <div class="category-count">39 queries</div>
+        </div>
+
+        <div class="subcategory">
+            <h3>📚 Karnataka State Entrance</h3>
+            <div class="question-list">
+                <div class="question-item">
+                    <span class="question-number">27.</span>
+                    <span class="question-text">How much KCET score is required to get into a good engineering college in Bangalore?</span>
+                </div>
+                <div class="question-item">
+                    <span class="question-number">28.</span>
+                    <span class="question-text">What are the best colleges in Bangalore and their approximate cutoffs?</span>
+                </div>
+                <div class="question-item">
+                    <span class="question-number">29.</span>
+                    <span class="question-text">Is JEE Mains preparation sufficient for KCET or do we need to prepare differently?</span>
+                </div>
+                <div class="question-item">
+                    <span class="question-number">30.</span>
+                    <span class="question-text">How to score a good rank in KCET and boards?</span>
+                </div>
+                <div class="question-item">
+                    <span class="question-number">31.</span>
+                    <span class="question-text">Is a domicile certificate required for KCET and should we apply for it now?</span>
+                </div>
+                <div class="question-item">
+                    <span class="question-number">32.</span>
+                    <span class="question-text">Which are the best engineering colleges in Karnataka and which exams do they accept admissions from?</span>
+                </div>
+                <div class="question-item">
+                    <span class="question-number">33.</span>
+                    <span class="question-text">Apart from IITs and NITs, what are the top 10 engineering colleges in Karnataka for Computer Science?</span>
+                </div>
+                <div class="question-item">
+                    <span class="question-number">34.</span>
+                    <span class="question-text">What will be the fee structure for KCET entry?</span>
+                </div>
+                <div class="question-item">
+                    <span class="question-number">35.</span>
+                    <span class="question-text">How is the CET and COMEDK rank calculated?</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="subcategory">
+            <h3>🎯 COMEDK Process</h3>
+            <div class="question-list">
+                <div class="question-item">
+                    <span class="question-number">36.</span>
+                    <span class="question-text">Which top engineering colleges can a child consider if preparing only for KCET and COMEDK?</span>
+                </div>
+                <div class="question-item">
+                    <span class="question-number">37.</span>
+                    <span class="question-text">Are deemed universities better or VTU affiliated institutes better?</span>
+                </div>
+                <div class="question-item">
+                    <span class="question-number">38.</span>
+                    <span class="question-text">Where can I get the number of seats allocated via KCET in private engineering colleges and their cutoffs?</span>
+                </div>
+                <div class="question-item">
+                    <span class="question-number">39.</span>
+                    <span class="question-text">Through CET for admission to engineering college, if we want to get top 1000 ranking, is it sufficient to solve modules given by coaching centers?</span>
+                </div>
+                <div class="question-item">
+                    <span class="question-number">40.</span>
+                    <span class="question-text">What are the courses that a CBSE PCB student is eligible for through KCET?</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="subcategory">
+            <h3>📍 Karnataka Domicile & Eligibility</h3>
+            <div class="question-list">
+                <div class="question-item">
+                    <span class="question-number">41.</span>
+                    <span class="question-text">For Karnataka domicile, what are the options under KCET under PCB stream?</span>
+                </div>
+                <div class="question-item">
+                    <span class="question-number">42.</span>
+                    <span class="question-text">Can my child apply for Karnataka CET on my domicile if I'm a Karnataka resident but currently staying outside Karnataka?</span>
+                </div>
+                <div class="question-item">
+                    <span class="question-number">43.</span>
+                    <span class="question-text">Which colleges in Karnataka have reasonable hostel fees?</span>
+                </div>
+                <div class="question-item">
+                    <span class="question-number">44.</span>
+                    <span class="question-text">What are the requirements for getting admission to different colleges after clearing KCET?</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="category-header">
+            <h2>🩺 Medicine & Health</h2>
+            <div class="category-count">32 queries</div>
+        </div>
+
+        <div class="subcategory">
+            <h3>📚 NEET Preparation & Process</h3>
+            <div class="question-list">
+                <div class="question-item">
+                    <span class="question-number">45.</span>
+                    <span class="question-text">Is it better to do MBBS abroad or in India? If abroad, which countries?</span>
+                </div>
+                <div class="question-item">
+                    <span class="question-number">46.</span>
+                    <span class="question-text">How to navigate through NEET/Medical admissions given the huge number of colleges and different rules?</span>
+                </div>
+                <div class="question-item">
+                    <span class="question-number">47.</span>
+                    <span class="question-text">What are all the key events with timing from NEET registration to college admission?</span>
+                </div>
+                <div class="question-item">
+                    <span class="question-number">48.</span>
+                    <span class="question-text">Is there any cutoff for general merit in the NEET exam?</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="subcategory">
+            <h3>🔄 Medical Alternatives & Backup Plans</h3>
+            <div class="question-list">
+                <div class="question-item">
+                    <span class="question-number">49.</span>
+                    <span class="question-text">What if my child doesn't make it in NEET 2026? What are the alternatives and backup plans?</span>
+                </div>
+                <div class="question-item">
+                    <span class="question-number">50.</span>
+                    <span class="question-text">What are the options for students who opted PCB and dropped maths completely apart from NEET?</span>
+                </div>
+                <div class="question-item">
+                    <span class="question-number">51.</span>
+                    <span class="question-text">What are the best options for kids interested in Biotechnology and AI with PCMB combination?</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="subcategory">
+            <h3>🏥 Medical College Selection & Fees</h3>
+            <div class="question-list">
+                <div class="question-item">
+                    <span class="question-number">52.</span>
+                    <span class="question-text">Which are the good medical colleges in Bangalore for general merit candidates?</span>
+                </div>
+                <div class="question-item">
+                    <span class="question-number">53.</span>
+                    <span class="question-text">Is there a management seat option available in medical colleges like in engineering?</span>
+                </div>
+                <div class="question-item">
+                    <span class="question-number">54.</span>
+                    <span class="question-text">On an average, how much funds should we prepare for MBBS year 1 (government seat vs management seat vs NRI quota)?</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="category-header">
+            <h2>🔬 Science & Mathematics</h2>
+            <div class="category-count">27 queries</div>
+        </div>
+
+        <div class="subcategory">
+            <h3>🧪 Pure Science Options</h3>
+            <div class="question-list">
+                <div class="question-item">
+                    <span class="question-number">55.</span>
+                    <span class="question-text">What are the career options for PCB students other than NEET and Medical?</span>
+                </div>
+                <div class="question-item">
+                    <span class="question-number">56.</span>
+                    <span class="question-text">What are alternative undergraduate science options if medicine cannot be secured (excluding Engineering, NDA, Architecture)?</span>
+                </div>
+                <div class="question-item">
+                    <span class="question-number">57.</span>
+                    <span class="question-text">What is the admission process for institutions like IISc and its timelines?</span>
+                </div>
+                <div class="question-item">
+                    <span class="question-number">58.</span>
+                    <span class="question-text">What is the future of students studying BS-MS courses?</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="subcategory">
+            <h3>🔬 Research & Advanced Science</h3>
+            <div class="question-list">
+                <div class="question-item">
+                    <span class="question-number">59.</span>
+                    <span class="question-text">Which are the top institutes for Sports Sciences research and what is the scope?</span>
+                </div>
+                <div class="question-item">
+                    <span class="question-number">60.</span>
+                    <span class="question-text">What are the best practices for scoring above 95% in boards?</span>
+                </div>
+                <div class="question-item">
+                    <span class="question-number">61.</span>
+                    <span class="question-text">How can AI be used for preparing board and entrance exams?</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="category-header">
+            <h2>🏫 Other Private Colleges</h2>
+            <div class="category-count">14 queries</div>
+        </div>
+
+        <div class="question-list">
+            <div class="question-item">
+                <span class="question-number">62.</span>
+                <span class="question-text">Apart from IITs, NITs, and Karnataka colleges, which are the top 5 engineering colleges in South India for Computer Science?</span>
+            </div>
+            <div class="question-item">
+                <span class="question-number">63.</span>
+                <span class="question-text">Which are good private colleges to consider if a child doesn't make it to elite institutes?</span>
+            </div>
+            <div class="question-item">
+                <span class="question-number">64.</span>
+                <span class="question-text">How/when do we start applications for private institutes like Manipal, BITS, VIT?</span>
+            </div>
+            <div class="question-item">
+                <span class="question-number">65.</span>
+                <span class="question-text">What is the difference in question patterns for different competitive exams like VIT, BITS, etc.?</span>
+            </div>
+            <div class="question-item">
+                <span class="question-number">66.</span>
+                <span class="question-text">What all options do we have while getting admissions besides exams like management quota?</span>
+            </div>
+            <div class="question-item">
+                <span class="question-number">67.</span>
+                <span class="question-text">List of top universities for engineering and their fee structure?</span>
+            </div>
+        </div>
+
+        <div class="category-header">
+            <h2>🎨 Design & Architecture</h2>
+            <div class="category-count">8 queries</div>
+        </div>
+
+        <div class="question-list">
+            <div class="question-item">
+                <span class="question-number">68.</span>
+                <span class="question-text">Which colleges should we consider for Bachelor of Design beyond IITs and NIDs?</span>
+            </div>
+            <div class="question-item">
+                <span class="question-number">69.</span>
+                <span class="question-text">What are the top architecture colleges in Bangalore and India, and what about NATA exams?</span>
+            </div>
+            <div class="question-item">
+                <span class="question-number">70.</span>
+                <span class="question-text">How can I assess my child's realistic chances in Bachelor's of Design competitive exams?</span>
+            </div>
+            <div class="question-item">
+                <span class="question-number">71.</span>
+                <span class="question-text">How to improve time management in NID papers and put creativity on paper within given time?</span>
+            </div>
+            <div class="question-item">
+                <span class="question-number">72.</span>
+                <span class="question-text">What should an ideal portfolio look like for product design in B.Des programs?</span>
+            </div>
+            <div class="question-item">
+                <span class="question-number">73.</span>
+                <span class="question-text">How can a child apply for architecture without giving NATA exam?</span>
+            </div>
+        </div>
+
+        <div class="category-header">
+            <h2>🌍 International & NRI Options</h2>
+            <div class="category-count growing-tag">Growing Category</div>
+        </div>
+
+        <div class="subcategory">
+            <h3>✈️ Study Abroad Options</h3>
+            <div class="question-list">
+                <div class="question-item">
+                    <span class="question-number">74.</span>
+                    <span class="question-text">What are the options in Singapore that consider CBSE and/or JEE scores and when do applications work?</span>
+                </div>
+                <div class="question-item">
+                    <span class="question-number">75.</span>
+                    <span class="question-text">If budget is 45-50L, what are good options besides Manipal and BITS? If budget extends to 75-80L, what Singapore/Australia options exist?</span>
+                </div>
+                <div class="question-item">
+                    <span class="question-number">76.</span>
+                    <span class="question-text">Which colleges in India take admission through SAT scores for engineering?</span>
+                </div>
+                <div class="question-item">
+                    <span class="question-number">77.</span>
+                    <span class="question-text">Are there guidelines for OCI holder students who have done schooling in India?</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="subcategory">
+            <h3>🎫 DASA & Foreign Quotas</h3>
+            <div class="question-list">
+                <div class="question-item">
+                    <span class="question-number">78.</span>
+                    <span class="question-text">How does DASA program admission work for NRI students?</span>
+                </div>
+                <div class="question-item">
+                    <span class="question-number">79.</span>
+                    <span class="question-text">What is the eligibility criteria for OCI card holders for various entrance exams?</span>
+                </div>
+                <div class="question-item">
+                    <span class="question-number">80.</span>
+                    <span class="question-text">Can a student with foreign passport apply for both normal and foreign quota or only foreign?</span>
+                </div>
+                <div class="question-item">
+                    <span class="question-number">81.</span>
+                    <span class="question-text">What additional documents are required for CIWG/DASA quota?</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="category-header">
+            <h2>💼 Career Guidance & Future Options</h2>
+        </div>
+
+        <div class="subcategory">
+            <h3>🚀 Emerging Fields & Trends</h3>
+            <div class="question-list">
+                <div class="question-item">
+                    <span class="question-number">82.</span>
+                    <span class="question-text">What are the booming career options that will flourish in the future?</span>
+                </div>
+                <div class="question-item">
+                    <span class="question-number">83.</span>
+                    <span class="question-text">How can a child pursue a career in Quantum Computing studying in India?</span>
+                </div>
+                <div class="question-item">
+                    <span class="question-number">84.</span>
+                    <span class="question-text">What are the options apart from Computer Science and Medical that are futuristic?</span>
+                </div>
+                <div class="question-item">
+                    <span class="question-number">85.</span>
+                    <span class="question-text">Which institutions foster entrepreneurial and innovative mindset alongside curriculum?</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="subcategory">
+            <h3>🔄 Alternative Career Paths</h3>
+            <div class="question-list">
+                <div class="question-item">
+                    <span class="question-number">86.</span>
+                    <span class="question-text">Best career options after 12th grade beyond traditional engineering and medicine?</span>
+                </div>
+                <div class="question-item">
+                    <span class="question-number">87.</span>
+                    <span class="question-text">In commerce/finance stream, which is the best domain for upcoming generations other than CA/CS?</span>
+                </div>
+                <div class="question-item">
+                    <span class="question-number">88.</span>
+                    <span class="question-text">What are some good institutions that teach both engineering and psychology in their curriculum?</span>
+                </div>
+                <div class="question-item">
+                    <span class="question-number">89.</span>
+                    <span class="question-text">If not an engineering graduate, what are other viable options?</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="subcategory">
+            <h3>🎓 Specialized Programs</h3>
+            <div class="question-list">
+                <div class="question-item">
+                    <span class="question-number">90.</span>
+                    <span class="question-text">What scholarships are available in India for students pursuing Engineering and UG pure science programs?</span>
+                </div>
+                <div class="question-item">
+                    <span class="question-number">91.</span>
+                    <span class="question-text">Need guidance for Finance + Engineering combination - which colleges offer this?</span>
+                </div>
+                <div class="question-item">
+                    <span class="question-number">92.</span>
+                    <span class="question-text">What are the courses that are in high demand in today's world?</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="category-header">
+            <h2>👨‍👩‍👧‍👦 Parent Support & Guidance</h2>
+        </div>
+
+        <div class="subcategory">
+            <h3>😌 Stress Management & Support</h3>
+            <div class="question-list">
+                <div class="question-item">
+                    <span class="question-number">93.</span>
+                    <span class="question-text">How can parents help their children with exam preparation and managing stress?</span>
+                </div>
+                <div class="question-item">
+                    <span class="question-number">94.</span>
+                    <span class="question-text">How do I as a parent help my child overcome performance anxiety and study-related stress?</span>
+                </div>
+                <div class="question-item">
+                    <span class="question-number">95.</span>
+                    <span class="question-text">In case my child does not score a good rank, what options should we pursue - accept mid-range colleges or think laterally?</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="subcategory">
+            <h3>⚠️ Special Circumstances</h3>
+            <div class="question-list">
+                <div class="question-item">
+                    <span class="question-number">96.</span>
+                    <span class="question-text">What are college options available if my child is unable to score 75% marks?</span>
+                </div>
+                <div class="question-item">
+                    <span class="question-number">97.</span>
+                    <span class="question-text">I have a special child (autism) who struggles with communication but passed 12th commerce - what good options exist for him to be self-dependent?</span>
+                </div>
+                <div class="question-item">
+                    <span class="question-number">98.</span>
+                    <span class="question-text">My child has taken PCMB and is an average performer except Biology - what are prospective options that build interest?</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="category-header">
+            <h2>📋 Documentation & Process Management</h2>
+        </div>
+
+        <div class="subcategory">
+            <h3>📝 Application Management</h3>
+            <div class="question-list">
+                <div class="question-item">
+                    <span class="question-number">99.</span>
+                    <span class="question-text">I need a ready reckoner - a step-by-step guide to filling entrance exam forms with a checklist of required documents for JEE Mains, BITSAT, KCET, COMEDK, NEST, ISI, CMI entrance.</span>
+                </div>
+                <div class="question-item">
+                    <span class="question-number">100.</span>
+                    <span class="question-text">What are all the documents required for counseling and admission processes?</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="summary-section">
+            <h3>📊 Analysis Summary</h3>
+            <div class="summary-stats">
+                <div class="stat-box">
+                    <div class="stat-label">Total Queries Analyzed:</div>
+                    <div class="stat-value">398</div>
+                </div>
+                <div class="stat-box">
+                    <div class="stat-label">Most Frequent Category:</div>
+                    <div class="stat-value">Engineering General (152 queries)</div>
+                </div>
+                <div class="stat-box">
+                    <div class="stat-label">Question Types:</div>
+                    <div class="stat-value">70% Factual, 22% Opinion-based, 8% Decision-making</div>
+                </div>
+                <div class="stat-box">
+                    <div class="stat-label">Key Themes:</div>
+                    <div class="stat-value">Application processes, college selection, entrance exam preparation, career guidance, parental support, and international options</div>
+                </div>
+            </div>
+            
+            <p style="margin-top: 25px; font-style: italic;">
+                These 100 questions represent the most comprehensive collection of concerns and information needs of parents and students navigating undergraduate entrance exams in India, with significant emphasis on Karnataka state exams (KCET/COMEDK) and emerging trends in international education.
+            </p>
+        </div>
+
+        <div class="footer-note">
+            <strong>📚 Usage Note:</strong> This structured list serves as the foundation for developing comprehensive FAQ resources, ensuring coverage of all major parent and student concerns in the undergraduate admission journey.
+        </div>
+    </div>
+</body>
+</html>

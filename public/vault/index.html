@@ -1,0 +1,526 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Margdarshak Vault - 2026 | Document Repository</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            border-radius: 20px;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+        }
+
+        .header {
+            background: linear-gradient(135deg, #2c5aa0 0%, #1e3a8a 100%);
+            color: white;
+            padding: 40px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .header::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: repeating-linear-gradient(
+                45deg,
+                transparent,
+                transparent 2px,
+                rgba(255, 255, 255, 0.05) 2px,
+                rgba(255, 255, 255, 0.05) 4px
+            );
+            animation: shimmer 3s linear infinite;
+        }
+
+        @keyframes shimmer {
+            0% { transform: translateX(-100%); }
+            100% { transform: translateX(100%); }
+        }
+
+        .header h1 {
+            font-size: 2.8rem;
+            margin-bottom: 10px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .header .subtitle {
+            font-size: 1.2rem;
+            opacity: 0.9;
+            position: relative;
+            z-index: 1;
+        }
+
+        .stats-bar {
+            background: rgba(44, 90, 160, 0.1);
+            padding: 20px;
+            display: flex;
+            justify-content: center;
+            gap: 40px;
+            flex-wrap: wrap;
+            border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+        }
+
+        .stat {
+            text-align: center;
+        }
+
+        .stat-number {
+            font-size: 2rem;
+            font-weight: bold;
+            color: #2c5aa0;
+        }
+
+        .stat-label {
+            font-size: 0.9rem;
+            color: #666;
+            margin-top: 5px;
+        }
+
+        .content {
+            padding: 40px;
+        }
+
+        .section-title {
+            font-size: 1.8rem;
+            color: #2c5aa0;
+            margin-bottom: 30px;
+            text-align: center;
+            position: relative;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 3px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            border-radius: 2px;
+        }
+
+        .documents-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+            background: white;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        .documents-table thead {
+            background: linear-gradient(135deg, #2c5aa0 0%, #1e3a8a 100%);
+        }
+
+        .documents-table th {
+            color: white;
+            padding: 20px;
+            text-align: left;
+            font-weight: 600;
+            font-size: 1rem;
+        }
+
+        .documents-table td {
+            padding: 20px;
+            border-bottom: 1px solid #f0f0f0;
+            vertical-align: top;
+        }
+
+        .documents-table tr:last-child td {
+            border-bottom: none;
+        }
+
+        .documents-table tbody tr {
+            transition: all 0.3s ease;
+        }
+
+        .documents-table tbody tr:hover {
+            background: rgba(102, 126, 234, 0.05);
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .doc-icon {
+            font-size: 2rem;
+            margin-right: 15px;
+            vertical-align: middle;
+        }
+
+        .doc-title {
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: #2c5aa0;
+            margin-bottom: 5px;
+        }
+
+        .doc-filename {
+            font-size: 0.9rem;
+            color: #666;
+            font-family: 'Courier New', monospace;
+            background: rgba(102, 126, 234, 0.1);
+            padding: 2px 8px;
+            border-radius: 4px;
+            display: inline-block;
+            margin-top: 5px;
+        }
+
+        .doc-description {
+            color: #555;
+            line-height: 1.5;
+        }
+
+        .doc-meta {
+            font-size: 0.9rem;
+            color: #888;
+        }
+
+        .category-badge {
+            display: inline-block;
+            padding: 4px 12px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            border-radius: 15px;
+            font-size: 0.8rem;
+            font-weight: 500;
+            margin-bottom: 5px;
+        }
+
+        .download-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 10px 20px;
+            background: linear-gradient(135deg, #28a745 0%, #20c997 100%);
+            color: white;
+            text-decoration: none;
+            border-radius: 8px;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            font-size: 0.9rem;
+        }
+
+        .download-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(40, 167, 69, 0.3);
+            text-decoration: none;
+            color: white;
+        }
+
+        .download-btn i {
+            font-size: 1rem;
+        }
+
+        .info-box {
+            background: linear-gradient(135deg, rgba(102, 126, 234, 0.1) 0%, rgba(118, 75, 162, 0.1) 100%);
+            border-left: 4px solid #667eea;
+            padding: 20px;
+            margin: 30px 0;
+            border-radius: 8px;
+        }
+
+        .info-box h3 {
+            color: #2c5aa0;
+            margin-bottom: 10px;
+            font-size: 1.2rem;
+        }
+
+        .info-box p {
+            color: #555;
+            margin: 0;
+        }
+
+        .back-button {
+            position: fixed;
+            top: 20px;
+            left: 20px;
+            background: rgba(255, 255, 255, 0.9);
+            backdrop-filter: blur(10px);
+            border: none;
+            border-radius: 50px;
+            padding: 12px 20px;
+            cursor: pointer;
+            font-size: 0.9rem;
+            font-weight: 500;
+            color: #2c5aa0;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+            z-index: 1000;
+        }
+
+        .back-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+            background: white;
+        }
+
+        @media (max-width: 768px) {
+            body {
+                padding: 10px;
+            }
+
+            .header h1 {
+                font-size: 2rem;
+            }
+
+            .header .subtitle {
+                font-size: 1rem;
+            }
+
+            .content {
+                padding: 20px;
+            }
+
+            .stats-bar {
+                gap: 20px;
+            }
+
+            .documents-table {
+                font-size: 0.9rem;
+            }
+
+            .documents-table th,
+            .documents-table td {
+                padding: 15px 10px;
+            }
+
+            .doc-title {
+                font-size: 1rem;
+            }
+
+            .back-button {
+                position: static;
+                margin-bottom: 20px;
+                display: inline-block;
+            }
+        }
+
+        /* Loading animation */
+        .loading {
+            display: inline-block;
+            width: 20px;
+            height: 20px;
+            border: 3px solid rgba(255, 255, 255, 0.3);
+            border-radius: 50%;
+            border-top-color: #fff;
+            animation: spin 1s ease-in-out infinite;
+        }
+
+        @keyframes spin {
+            to { transform: rotate(360deg); }
+        }
+    </style>
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <button class="back-button" onclick="window.history.back()">
+        <i class="fas fa-arrow-left"></i> Back to FAQ
+    </button>
+
+    <div class="container">
+        <div class="header">
+            <h1>🗄️ Margdarshak Vault - 2026</h1>
+            <p class="subtitle">Comprehensive Document Repository for Academic Guidance</p>
+        </div>
+
+        <div class="stats-bar">
+            <div class="stat">
+                <div class="stat-number">2</div>
+                <div class="stat-label">Documents</div>
+            </div>
+            <div class="stat">
+                <div class="stat-number">1</div>
+                <div class="stat-label">Categories</div>
+            </div>
+            <div class="stat">
+                <div class="stat-number">2026</div>
+                <div class="stat-label">Academic Year</div>
+            </div>
+        </div>
+
+        <div class="content">
+            <div class="info-box">
+                <h3><i class="fas fa-info-circle"></i> About Margdarshak Vault</h3>
+                <p>The Margdarshak Vault is a curated collection of essential documents, guidelines, and resources designed to support parents and students in their academic journey. Each document has been carefully selected to provide valuable insights and practical guidance for the 2025-26 academic year.</p>
+            </div>
+
+            <h2 class="section-title">📚 Document Repository</h2>
+
+            <table class="documents-table">
+                <thead>
+                    <tr>
+                        <th style="width: 60px;">Type</th>
+                        <th style="width: 35%;">Document</th>
+                        <th style="width: 45%;">Description</th>
+                        <th style="width: 15%;">Access</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>
+                            <div class="doc-icon">👥</div>
+                        </td>
+                        <td>
+                            <div class="category-badge">Community Guidelines</div>
+                            <div class="doc-title">Margdarshak Community Groups 25-26</div>
+                            <div class="doc-filename">Margdarshak Community 25-26 Groups.docx</div>
+                        </td>
+                        <td>
+                            <div class="doc-description">
+                                Comprehensive guide to Margdarshak community groups for the 2025-26 academic year. Contains detailed information about various WhatsApp groups, their purposes, joining procedures, and specific guidelines for different academic streams and entrance exams.
+                            </div>
+                            <div class="doc-meta">
+                                <strong>Topics:</strong> Group Structure, Joining Process, Stream-wise Groups<br>
+                                <strong>Target:</strong> Parents & Students (Class 12)
+                            </div>
+                        </td>
+                        <td>
+                            <a href="./Margdarshak Community 25-26 Groups.docx" class="download-btn" download>
+                                <i class="fas fa-download"></i>
+                                Download
+                            </a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div class="doc-icon">📋</div>
+                        </td>
+                        <td>
+                            <div class="category-badge">Community Guidelines</div>
+                            <div class="doc-title">Community Dos and Don'ts</div>
+                            <div class="doc-filename">Margdarshak Community dos-and-donts.docx</div>
+                        </td>
+                        <td>
+                            <div class="doc-description">
+                                Essential guidelines and etiquette for participating in Margdarshak community discussions. Outlines best practices, acceptable behavior, posting guidelines, and community standards to ensure productive and respectful interactions among all members.
+                            </div>
+                            <div class="doc-meta">
+                                <strong>Topics:</strong> Community Etiquette, Posting Guidelines, Best Practices<br>
+                                <strong>Target:</strong> All Community Members
+                            </div>
+                        </td>
+                        <td>
+                            <a href="./Margdarshak Community dos-and-donts.docx" class="download-btn" download>
+                                <i class="fas fa-download"></i>
+                                Download
+                            </a>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <div class="info-box" style="margin-top: 40px;">
+                <h3><i class="fas fa-lightbulb"></i> How to Use These Documents</h3>
+                <p><strong>Step 1:</strong> Download the documents by clicking the download button<br>
+                <strong>Step 2:</strong> Open with Microsoft Word or any compatible document viewer<br>
+                <strong>Step 3:</strong> Read through the guidelines carefully before joining community groups<br>
+                <strong>Step 4:</strong> Refer back to these documents whenever you need clarification on community processes</p>
+            </div>
+
+            <div class="info-box">
+                <h3><i class="fas fa-question-circle"></i> Need Help?</h3>
+                <p>If you encounter any issues accessing these documents or have questions about their content, please reach out to the Margdarshak support team through the main FAQ portal or community groups.</p>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Add some interactive features
+        document.addEventListener('DOMContentLoaded', function() {
+            // Add click animation to download buttons
+            const downloadBtns = document.querySelectorAll('.download-btn');
+            downloadBtns.forEach(btn => {
+                btn.addEventListener('click', function(e) {
+                    // Create ripple effect
+                    const ripple = document.createElement('span');
+                    const rect = this.getBoundingClientRect();
+                    const size = Math.max(rect.width, rect.height);
+                    const x = e.clientX - rect.left - size / 2;
+                    const y = e.clientY - rect.top - size / 2;
+                    
+                    ripple.style.cssText = `
+                        position: absolute;
+                        width: ${size}px;
+                        height: ${size}px;
+                        left: ${x}px;
+                        top: ${y}px;
+                        background: rgba(255, 255, 255, 0.4);
+                        border-radius: 50%;
+                        transform: scale(0);
+                        animation: ripple 0.6s linear;
+                        pointer-events: none;
+                    `;
+                    
+                    this.style.position = 'relative';
+                    this.style.overflow = 'hidden';
+                    this.appendChild(ripple);
+                    
+                    setTimeout(() => ripple.remove(), 600);
+                });
+            });
+
+            // Add smooth scroll effect for tables
+            const tableRows = document.querySelectorAll('.documents-table tbody tr');
+            const observerOptions = {
+                threshold: 0.1,
+                rootMargin: '0px 0px -50px 0px'
+            };
+
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.style.opacity = '1';
+                        entry.target.style.transform = 'translateY(0)';
+                    }
+                });
+            }, observerOptions);
+
+            tableRows.forEach((row, index) => {
+                row.style.opacity = '0';
+                row.style.transform = 'translateY(20px)';
+                row.style.transition = `opacity 0.6s ease ${index * 0.1}s, transform 0.6s ease ${index * 0.1}s`;
+                observer.observe(row);
+            });
+        });
+
+        // Add ripple animation CSS
+        const style = document.createElement('style');
+        style.textContent = `
+            @keyframes ripple {
+                to {
+                    transform: scale(4);
+                    opacity: 0;
+                }
+            }
+        `;
+        document.head.appendChild(style);
+    </script>
+</body>
+</html>

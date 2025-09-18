@@ -1538,6 +1538,12 @@
                 ]
             },
             {
+                title: 'Margdarshak Vault - 2026',
+                hasSubmenu: false,
+                isSpecial: true,
+                action: 'openVault'
+            },
+            {
                 title: 'About',
                 hasSubmenu: false,
                 isSpecial: true,
@@ -1551,6 +1557,7 @@
             'Medical': '🏥',
             'Pure Science and Maths': '🔬',
             'Data Analytics': '📊',
+            'Margdarshak Vault - 2026': '🗄️',
             'About': 'ℹ️'
         };
 
@@ -1744,9 +1751,11 @@
                         e.preventDefault();
                         
                         if (doc.isSpecial && doc.action) {
-                            // Handle special menu items like About
+                            // Handle special menu items like About and Vault
                             if (doc.action === 'showAbout') {
                                 showAbout();
+                            } else if (doc.action === 'openVault') {
+                                openVault();
                             }
                         } else {
                             // Regular document navigation
@@ -1874,6 +1883,11 @@
             
             // Update page title
             document.title = 'About - Margdarshak FAQ';
+        }
+
+        function openVault() {
+            // Open the vault in a new tab/window
+            window.open('./vault/index.html', '_blank');
         }
 
         // Mobile sidebar functions
