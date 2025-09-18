@@ -168,13 +168,21 @@
             margin-bottom: 15px;
         }
 
+        .doc-title {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 12px;
+            flex-wrap: nowrap;
+        }
+
         .doc-title a {
             font-size: 1.4rem;
             font-weight: 700;
             color: #2c5aa0;
             text-decoration: none;
             line-height: 1.3;
-            display: block;
+            flex: 1;
             transition: all 0.3s ease;
         }
 
@@ -182,6 +190,45 @@
             color: #1e3a8a;
             text-decoration: none;
             transform: translateX(2px);
+        }
+
+        .view-icon {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            width: 32px;
+            height: 32px;
+            min-width: 32px;
+            max-width: 32px;
+            min-height: 32px;
+            max-height: 32px;
+            border-radius: 50%;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 3px 10px rgba(102, 126, 234, 0.3);
+            flex-shrink: 0;
+            flex-grow: 0;
+            text-decoration: none;
+            aspect-ratio: 1;
+        }
+
+        .view-icon:hover {
+            transform: scale(1.1);
+            box-shadow: 0 5px 15px rgba(102, 126, 234, 0.4);
+        }
+
+        .view-icon i {
+            font-size: 0.8rem;
+            line-height: 1;
+            width: auto;
+            height: auto;
+        }
+
+        .view-icon:hover {
+            text-decoration: none;
+            transform: scale(1.05);
         }
 
         .doc-description {
@@ -306,8 +353,25 @@
                 padding: 20px 15px;
             }
 
+            .doc-title {
+                gap: 10px;
+            }
+
             .doc-title a {
                 font-size: 1.2rem;
+            }
+
+            .view-icon {
+                width: 28px;
+                height: 28px;
+                min-width: 28px;
+                max-width: 28px;
+                min-height: 28px;
+                max-height: 28px;
+            }
+
+            .view-icon i {
+                font-size: 0.7rem;
             }
 
             .doc-description {
@@ -384,6 +448,9 @@
                             <a href="./Margdarshak Community 25-26 Groups.html" target="_blank">
                                 Margdarshak Community Groups 25-26
                             </a>
+                            <a href="./Margdarshak Community 25-26 Groups.html" target="_blank" class="view-icon" title="View Document">
+                                <i class="fas fa-eye"></i>
+                            </a>
                         </h3>
                         <p class="doc-description">
                             Complete guide to WhatsApp groups for 2025-26. Learn about different groups, their purposes, and joining procedures for various academic streams.
@@ -406,6 +473,9 @@
                             <a href="./Margdarshak Community dos-and-donts.html" target="_blank">
                                 Community Dos and Don'ts
                             </a>
+                            <a href="./Margdarshak Community dos-and-donts.html" target="_blank" class="view-icon" title="View Document">
+                                <i class="fas fa-eye"></i>
+                            </a>
                         </h3>
                         <p class="doc-description">
                             Essential etiquette and guidelines for community participation. Best practices, posting rules, and standards for respectful interactions.
@@ -421,7 +491,8 @@
 
             <div class="info-box" style="margin-top: 40px;">
                 <h3><i class="fas fa-lightbulb"></i> How to Use These Documents</h3>
-                <p><strong>Quick Access:</strong> Click on any document title to open it directly in your browser<br>
+                <p><strong>Quick Access:</strong> Click on any document title or the eye icon to open documents directly in your browser<br>
+                <strong>View Options:</strong> Both the document title text and the blue eye icon are clickable for easy access<br>
                 <strong>Mobile Optimized:</strong> Card layout works perfectly on all devices and screen sizes<br>
                 <strong>Easy Navigation:</strong> Use the back button in each document to return to the vault<br>
                 <strong>Reference:</strong> Use these documents to understand community guidelines before joining groups</p>
@@ -461,7 +532,7 @@
             });
 
             // Add click animation to document title links
-            const docTitleLinks = document.querySelectorAll('.doc-title a');
+            const docTitleLinks = document.querySelectorAll('.doc-title a:not(.view-icon)');
             docTitleLinks.forEach(link => {
                 link.addEventListener('click', function(e) {
                     // Add a subtle click effect
@@ -469,6 +540,21 @@
                     setTimeout(() => {
                         this.style.transform = 'translateX(2px)';
                     }, 150);
+                });
+            });
+
+            // Add click animation to view icons
+            const viewIcons = document.querySelectorAll('.view-icon');
+            viewIcons.forEach(icon => {
+                icon.addEventListener('click', function(e) {
+                    // Add a bounce effect
+                    this.style.transform = 'scale(0.9)';
+                    setTimeout(() => {
+                        this.style.transform = 'scale(1.1)';
+                    }, 100);
+                    setTimeout(() => {
+                        this.style.transform = 'scale(1)';
+                    }, 200);
                 });
             });
         });
