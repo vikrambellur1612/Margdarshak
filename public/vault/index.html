@@ -212,28 +212,28 @@
             margin-bottom: 5px;
         }
 
-        .download-btn {
+        .view-btn {
             display: inline-flex;
             align-items: center;
             gap: 8px;
-            padding: 10px 20px;
-            background: linear-gradient(135deg, #28a745 0%, #20c997 100%);
+            padding: 12px 24px;
+            background: linear-gradient(135deg, #007bff 0%, #0056b3 100%);
             color: white;
             text-decoration: none;
             border-radius: 8px;
             font-weight: 500;
             transition: all 0.3s ease;
-            font-size: 0.9rem;
+            font-size: 1rem;
         }
 
-        .download-btn:hover {
+        .view-btn:hover {
             transform: translateY(-2px);
-            box-shadow: 0 5px 15px rgba(40, 167, 69, 0.3);
+            box-shadow: 0 5px 15px rgba(0, 123, 255, 0.3);
             text-decoration: none;
             color: white;
         }
 
-        .download-btn i {
+        .view-btn i {
             font-size: 1rem;
         }
 
@@ -272,12 +272,16 @@
             box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
             transition: all 0.3s ease;
             z-index: 1000;
+            text-decoration: none;
+            display: inline-block;
         }
 
         .back-button:hover {
             transform: translateY(-2px);
             box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
             background: white;
+            text-decoration: none;
+            color: #2c5aa0;
         }
 
         @media (max-width: 768px) {
@@ -340,9 +344,9 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 <body>
-    <button class="back-button" onclick="window.history.back()">
+    <a href="../index.html" class="back-button">
         <i class="fas fa-arrow-left"></i> Back to FAQ
-    </button>
+    </a>
 
     <div class="container">
         <div class="header">
@@ -390,7 +394,7 @@
                         <td>
                             <div class="category-badge">Community Guidelines</div>
                             <div class="doc-title">Margdarshak Community Groups 25-26</div>
-                            <div class="doc-filename">Margdarshak Community 25-26 Groups.docx</div>
+                            <div class="doc-filename">Margdarshak Community 25-26 Groups.html</div>
                         </td>
                         <td>
                             <div class="doc-description">
@@ -402,9 +406,9 @@
                             </div>
                         </td>
                         <td>
-                            <a href="./Margdarshak Community 25-26 Groups.docx" class="download-btn" download>
-                                <i class="fas fa-download"></i>
-                                Download
+                            <a href="./Margdarshak Community 25-26 Groups.html" class="view-btn" target="_blank">
+                                <i class="fas fa-eye"></i>
+                                View Document
                             </a>
                         </td>
                     </tr>
@@ -415,7 +419,7 @@
                         <td>
                             <div class="category-badge">Community Guidelines</div>
                             <div class="doc-title">Community Dos and Don'ts</div>
-                            <div class="doc-filename">Margdarshak Community dos-and-donts.docx</div>
+                            <div class="doc-filename">Margdarshak Community dos-and-donts.html</div>
                         </td>
                         <td>
                             <div class="doc-description">
@@ -427,9 +431,9 @@
                             </div>
                         </td>
                         <td>
-                            <a href="./Margdarshak Community dos-and-donts.docx" class="download-btn" download>
-                                <i class="fas fa-download"></i>
-                                Download
+                            <a href="./Margdarshak Community dos-and-donts.html" class="view-btn" target="_blank">
+                                <i class="fas fa-eye"></i>
+                                View Document
                             </a>
                         </td>
                     </tr>
@@ -438,10 +442,10 @@
 
             <div class="info-box" style="margin-top: 40px;">
                 <h3><i class="fas fa-lightbulb"></i> How to Use These Documents</h3>
-                <p><strong>Step 1:</strong> Download the documents by clicking the download button<br>
-                <strong>Step 2:</strong> Open with Microsoft Word or any compatible document viewer<br>
-                <strong>Step 3:</strong> Read through the guidelines carefully before joining community groups<br>
-                <strong>Step 4:</strong> Refer back to these documents whenever you need clarification on community processes</p>
+                <p><strong>View Online:</strong> Click the "View Document" button to read documents directly in your browser<br>
+                <strong>Mobile Friendly:</strong> All documents are optimized for both desktop and mobile viewing<br>
+                <strong>Easy Navigation:</strong> Use the back button in each document to return to the vault<br>
+                <strong>Reference:</strong> Use these documents to understand community guidelines before joining groups</p>
             </div>
 
             <div class="info-box">
@@ -454,9 +458,9 @@
     <script>
         // Add some interactive features
         document.addEventListener('DOMContentLoaded', function() {
-            // Add click animation to download buttons
-            const downloadBtns = document.querySelectorAll('.download-btn');
-            downloadBtns.forEach(btn => {
+            // Add click animation to view buttons
+            const actionBtns = document.querySelectorAll('.view-btn');
+            actionBtns.forEach(btn => {
                 btn.addEventListener('click', function(e) {
                     // Create ripple effect
                     const ripple = document.createElement('span');
